@@ -1,6 +1,18 @@
+"use client";
+
 import styles from "./page.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+
+  const handleSubmit = () => {
+    setError("Test");
+  };
+
   return (
     <main className={styles.main}>
       <nav className={styles.nav}>CLUBCART</nav>
@@ -11,6 +23,10 @@ export default function Home() {
             <input
               className={styles.inputField}
               placeholder="Enter your username or email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             ></input>
           </div>
           <div className={styles.inputContainer}>
@@ -18,12 +34,19 @@ export default function Home() {
             <input
               className={styles.inputField}
               placeholder="Enter your password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             ></input>
           </div>
-          <button className={styles.inputButton}>Login</button>
+          <button className={styles.inputButton} onClick={handleSubmit}>
+            Login
+          </button>
           <a href="/sign-up" className={styles.inputExtra}>
             Don&rsquo;t have an account? Sign Up
           </a>
+          {error ? <div className={styles.errorContainer}>error</div> : ""}
         </div>
         <div className={styles.rightText}>
           your one-stop <br />

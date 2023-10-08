@@ -101,11 +101,11 @@
 
   color: #044e8b;
 
-  font-size: 7vw;
+  font-size: 7vi;
 }
 
 /* ! Media Queries */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .firstContainer {
     flex-direction: column;
   }
@@ -116,6 +116,18 @@
   .rightText {
     text-align: center;
 
-    font-size: 11vw;
+    font-size: 10vw;
+  }
+}
+
+@media (max-height: 500px) {
+  .inputDesc {
+    display: none;
+  }
+  .inputContainer {
+    height: 50%;
+  }
+  .inputField {
+    padding: 2%;
   }
 }

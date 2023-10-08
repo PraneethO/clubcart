@@ -10,14 +10,14 @@ export default function Home() {
             <div className={styles.inputDesc}>Username or email</div>
             <input
               className={styles.inputField}
-              // placeholder="Enter your username or email"
+              placeholder="Enter your username or email"
             ></input>
           </div>
           <div className={styles.inputContainer}>
             <div className={styles.inputDesc}>Password</div>
             <input
               className={styles.inputField}
-              // placeholder="Enter your password"
+              placeholder="Enter your password"
             ></input>
           </div>
           <button className={styles.inputButton}>Login</button>

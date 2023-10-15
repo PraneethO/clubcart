@@ -15,7 +15,10 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <nav className={styles.nav}>CLUBCART</nav>
+      <nav className={styles.nav}>
+        <div>CLUBCART</div>
+        <button>Join Us</button>
+      </nav>
       <div className={styles.firstContainer}>
         <div className={styles.loginForm}>
           <div className={styles.inputContainer}>

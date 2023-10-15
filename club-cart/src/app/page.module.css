@@ -15,15 +15,37 @@
 
 /* ! NavBar CSS */
 .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
   text-align: left;
   padding: 1%;
 
-  font-size: 4.5vw;
+  font-size: 4.5rem;
   color: #044e8b;
 
   position: fixed;
+}
+.nav button {
+  font-size: 2.7rem;
 
-  width: 100%;
+  white-space: nowrap;
+
+  padding: 0.5% 3% 0.5% 3%;
+
+  border-radius: 1.5rem;
+
+  background-color: #044e8b;
+  color: white;
+
+  border: 1px solid black;
+}
+.nav button:hover {
+  background-color: rgba(4, 78, 139, 0.9);
+  cursor: pointer;
 }
 
 /* ! First Container CSS */
@@ -32,6 +54,8 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  padding-top: 3%;
 
   width: 100%;
   height: 100vh;

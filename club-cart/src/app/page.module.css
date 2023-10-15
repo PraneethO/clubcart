@@ -29,7 +29,7 @@
 
   position: fixed;
 }
-.nav button {
+.navButton {
   font-size: 2.7rem;
 
   white-space: nowrap;
@@ -43,7 +43,7 @@
 
   border: 1px solid black;
 }
-.nav button:hover {
+.navButton:hover {
   background-color: rgba(4, 78, 139, 0.9);
   cursor: pointer;
 }

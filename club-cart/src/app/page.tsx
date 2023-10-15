@@ -3,6 +3,8 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 
+import Link from "next/link";
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +19,9 @@ export default function Home() {
     <main className={styles.main}>
       <nav className={styles.nav}>
         <div>CLUBCART</div>
-        <button>Join Us</button>
+        <Link href="/sign-up">
+          <button className={styles.navButton}>Join Us</button>
+        </Link>
       </nav>
       <div className={styles.firstContainer}>
         <div className={styles.loginForm}>

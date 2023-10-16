@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
 
+import Link from "next/link";
+
 export default function Home() {
 
   const [email, setEmail] = useState("");
@@ -17,7 +19,12 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <nav className={styles.nav}>CLUBCART</nav>
+      <nav className={styles.nav}>
+        <div>CLUBCART</div>
+        <Link href="/pages/sign-up">
+          <button className={styles.navButton}>Join Us</button>
+        </Link>
+      </nav>
       <div className={styles.firstContainer}>
         <div className={styles.loginForm}>
           <div className={styles.inputContainer} style={{ marginTop: "1rem" }}>
@@ -49,7 +56,7 @@ export default function Home() {
           <button className={styles.inputButton} onClick={handleSubmit}>
             Login
           </button>
-          <a href="/sign-up" className={styles.inputExtra}>
+          <a href="/pages/sign-up" className={styles.inputExtra}>
             Don&rsquo;t have an account? Sign Up
           </a>
           {error ? <div className={styles.errorContainer}>ERROR</div> : ""}

@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
 
@@ -54,9 +55,18 @@ export default function Home() {
           {error ? <div className={styles.errorContainer}>ERROR</div> : ""}
         </div>
         <div className={styles.rightText}>
-            Your one-stop shop <br/> for all things <br/> clubs.
+          <Typewriter
+            options={{
+              strings: ["Your one-stop <br/> shop for all things <br/> clubs."],
+              autoStart: true,
+              delay: 40,
+              loop: true,
+            }}
+          />
         </div>
       </div>
     </main>
   );
 }
+
+{/* Your one-stop <br/> shop for all things <br/> clubs. */ }

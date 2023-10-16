@@ -39,7 +39,7 @@
 
 /* ! Login Form CSS */
 .loginForm {
-  width: 40%;
+  width: 35%;
   height: fit-content;
   padding: 1rem;
 
@@ -92,7 +92,7 @@
 .inputButton {
   margin-top: 0.5rem;
 
-  width: 75%;
+  width: 70%;
 
   background-color: #044e8b;
   color: white;

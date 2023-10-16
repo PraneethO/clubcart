@@ -1,10 +1,11 @@
+"use client";
+
 import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
-import { useClient } from 'react-server-components';
 
 export default function Home() {
-  useClient();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -53,13 +54,7 @@ export default function Home() {
           {error ? <div className={styles.errorContainer}>ERROR</div> : ""}
         </div>
         <div className={styles.rightText}>
-          <ReactTyped
-            strings={["your one-stop", "shop for all things", "clubs."]}
-            typeSpeed={50}
-            backSpeed={30}
-            backDelay={1000}
-            loop
-          />
+            Your one-stop shop <br/> for all things <br/> clubs.
         </div>
       </div>
     </main>

@@ -13,6 +13,8 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleSubmit = () => {
     setError("Test");
   };
@@ -21,9 +23,11 @@ export default function Home() {
     <main className={styles.main}>
       <nav className={styles.nav}>
         <div>CLUBCART</div>
-        <Link href="/pages/sign-up">
+
+        <Link href="/pages/sign-up" className={styles.link}>
           <button className={styles.navButton}>Join Us</button>
         </Link>
+
       </nav>
       <div className={styles.firstContainer}>
         <div className={styles.loginForm}>
@@ -50,8 +54,22 @@ export default function Home() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              type="password"
-            ></input>
+
+              type={showPassword ? "text" : "password"}
+            />
+            <label className={styles.showPasswordText}>
+              
+              <input
+                type="checkbox"
+                checked={showPassword}
+                onChange={() => setShowPassword(!showPassword)}
+                style = {{marginTop: "0.5rem"}}
+              />
+              
+              <span className="checkmark"></span>
+              Show Password
+            </label>
+            
           </div>
           <button className={styles.inputButton} onClick={handleSubmit}>
             Login

@@ -34,8 +34,12 @@
   position: flex;
 }
 
+.navLogo {
+  transform: translateY(-.25rem);
+}
+
 .link {
-  transform: translateY(-0.1rem);
+  transform: translateY(-.75rem);
 
   display: flex;
   margin-top: 0;

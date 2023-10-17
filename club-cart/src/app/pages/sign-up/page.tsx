@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./page.module.css";
 
 import { useState } from "react";
@@ -18,7 +19,9 @@ export default function SignUp() {
   return (
     <main className={styles.main}>
       <div className={styles.firstContainer}>
-        <div className={styles.leftPartition}>CLUBCART</div>
+        <Link href="/" style={{textDecoration: "none"}}>
+          <div className={styles.leftPartition}>CLUBCART</div>
+        </Link>
         <div className={styles.rightPartition}>
           <div className={styles.buttonSwitch}>
             <button
@@ -45,16 +48,17 @@ export default function SignUp() {
                   : { background: "transparent" }
               }
             >
-              Authorization
+              Administration
             </button>
           </div>
           {studentForm ? (
             <div className={styles.loginForm}>
               <div className={styles.twoWayInput}>
                 <div className={styles.inputContainer}>
-                  <div className={styles.inputDesc}>First Name</div>
+                  <div className={styles.inputDesc} style={{marginTop: "0"}}>First Name</div>
                   <input
                     className={styles.inputField}
+                    style={{width: "95%"}}
                     placeholder="Enter your first name"
                     value={firstName}
                     onChange={(e) => {
@@ -63,9 +67,10 @@ export default function SignUp() {
                   ></input>
                 </div>
                 <div className={styles.inputContainer}>
-                  <div className={styles.inputDesc}>Last Name</div>
+                  <div className={styles.inputDesc} style={{marginLeft: "5%", marginTop: "0"}}>Last Name</div>
                   <input
                     className={styles.inputField}
+                    style={{width: "95%", marginLeft: "5%"}}
                     placeholder="Enter your last name"
                     value={lastName}
                     onChange={(e) => {
@@ -78,6 +83,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Personal Email</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Enter your personal email"
                   value={email}
                   onChange={(e) => {
@@ -89,6 +95,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Password</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => {
@@ -100,6 +107,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>School Code</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Enter your school code"
                   value={school}
                   onChange={(e) => {
@@ -112,9 +120,10 @@ export default function SignUp() {
           ) : (
             <div className={styles.loginForm}>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>School</div>
+                <div className={styles.inputDesc} style={{marginTop: "0"}}>School</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Enter your school"
                   value={school}
                   onChange={(e) => {
@@ -126,6 +135,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Email</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => {
@@ -137,6 +147,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Password</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => {
@@ -148,6 +159,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Confirm Password</div>
                 <input
                   className={styles.inputField}
+                  style={{width: "100%"}}
                   placeholder="Confirm Your Password"
                   value={confirmPassword}
                   onChange={(e) => {

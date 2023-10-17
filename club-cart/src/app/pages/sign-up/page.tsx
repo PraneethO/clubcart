@@ -46,12 +46,13 @@ export default function SignUp() {
             </button>
           </div>
           {studentForm ? (
+            <div className={styles.loginForm}></div>
+          ) : (
             <div className={styles.loginForm}>
-              <div
-                className={styles.inputContainer}
-                style={{ marginTop: "1rem" }}
-              >
-                <div className={styles.inputDesc}>School</div>
+              <div className={styles.inputContainer}>
+                <div className={styles.inputDesc} style={{ marginTop: "3vh" }}>
+                  School
+                </div>
                 <input
                   className={styles.inputField}
                   placeholder="Enter your school"
@@ -59,13 +60,9 @@ export default function SignUp() {
                   onChange={(e) => {
                     setSchool(e.target.value);
                   }}
-                  style={{ marginBottom: "0.5rem" }}
                 ></input>
               </div>
-              <div
-                className={styles.inputContainer}
-                style={{ marginTop: "1rem" }}
-              >
+              <div className={styles.inputContainer}>
                 <div className={styles.inputDesc}>Email</div>
                 <input
                   className={styles.inputField}
@@ -74,13 +71,9 @@ export default function SignUp() {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
-                  style={{ marginBottom: "0.5rem" }}
                 ></input>
               </div>
-              <div
-                className={styles.inputContainer}
-                style={{ marginTop: "1rem" }}
-              >
+              <div className={styles.inputContainer}>
                 <div className={styles.inputDesc}>Password</div>
                 <input
                   className={styles.inputField}
@@ -89,13 +82,9 @@ export default function SignUp() {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
-                  style={{ marginBottom: "0.5rem" }}
                 ></input>
               </div>
-              <div
-                className={styles.inputContainer}
-                style={{ marginTop: "1rem" }}
-              >
+              <div className={styles.inputContainer}>
                 <div className={styles.inputDesc}>Confirm Password</div>
                 <input
                   className={styles.inputField}
@@ -104,12 +93,10 @@ export default function SignUp() {
                   onChange={(e) => {
                     setConfirmPassword(e.target.value);
                   }}
-                  style={{ marginBottom: "0.5rem" }}
                 ></input>
               </div>
+              <button className={styles.buttonSubmit}>Join</button>
             </div>
-          ) : (
-            <div className={styles.loginForm}></div>
           )}
         </div>
       </div>

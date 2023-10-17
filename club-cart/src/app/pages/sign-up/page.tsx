@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 
 import { useState } from "react";
 
+import axios from "axios";
+
 export default function SignUp() {
   const [studentForm, setStudentForm] = useState(true);
 
@@ -14,6 +16,22 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleStudentSubmit = async () => {
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      password,
+      school,
+    };
+
+    await axios.post("http://localhost:3000/api/auth/signUp", formData);
+  };
+
+  const handleGeneralSubmit = () => {
+    const formData = { school, email, password };
+  };
 
   return (
     <main className={styles.main}>
@@ -107,7 +125,12 @@ export default function SignUp() {
                   }}
                 ></input>
               </div>
-              <button className={styles.buttonSubmit}>Join</button>
+              <button
+                className={styles.buttonSubmit}
+                onClick={handleStudentSubmit}
+              >
+                Join
+              </button>
             </div>
           ) : (
             <div className={styles.loginForm}>
@@ -155,7 +178,12 @@ export default function SignUp() {
                   }}
                 ></input>
               </div>
-              <button className={styles.buttonSubmit}>Join</button>
+              <button
+                className={styles.buttonSubmit}
+                onClick={handleGeneralSubmit}
+              >
+                Join
+              </button>
             </div>
           )}
         </div>

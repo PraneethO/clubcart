@@ -115,7 +115,7 @@ export default function SignUp() {
                   }}
                 ></input>
               </div>
-              <button className={styles.buttonSubmit}>Join</button>
+              <button className={styles.buttonSubmit}>Agree & Join</button>
             </div>
           ) : (
             <div className={styles.loginForm}>

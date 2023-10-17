@@ -110,3 +110,10 @@
 
   cursor: pointer;
 }
+
+/* Student Login Form yes ik this is backwards but its 9:13 pm */
+.twoWayInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

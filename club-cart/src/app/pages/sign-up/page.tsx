@@ -7,6 +7,9 @@ import { useState } from "react";
 export default function SignUp() {
   const [studentForm, setStudentForm] = useState(true);
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
   const [school, setSchool] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,13 +49,70 @@ export default function SignUp() {
             </button>
           </div>
           {studentForm ? (
-            <div className={styles.loginForm}></div>
+            <div className={styles.loginForm}>
+              <div className={styles.twoWayInput}>
+                <div className={styles.inputContainer}>
+                  <div className={styles.inputDesc}>First Name</div>
+                  <input
+                    className={styles.inputField}
+                    placeholder="Enter your first name"
+                    value={firstName}
+                    onChange={(e) => {
+                      setFirstName(e.target.value);
+                    }}
+                  ></input>
+                </div>
+                <div className={styles.inputContainer}>
+                  <div className={styles.inputDesc}>Last Name</div>
+                  <input
+                    className={styles.inputField}
+                    placeholder="Enter your last name"
+                    value={lastName}
+                    onChange={(e) => {
+                      setLastName(e.target.value);
+                    }}
+                  ></input>
+                </div>
+              </div>
+              <div className={styles.inputContainer}>
+                <div className={styles.inputDesc}>Personal Email</div>
+                <input
+                  className={styles.inputField}
+                  placeholder="Enter your personal email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <div className={styles.inputContainer}>
+                <div className={styles.inputDesc}>Password</div>
+                <input
+                  className={styles.inputField}
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <div className={styles.inputContainer}>
+                <div className={styles.inputDesc}>School Code</div>
+                <input
+                  className={styles.inputField}
+                  placeholder="Enter your school code"
+                  value={school}
+                  onChange={(e) => {
+                    setSchool(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <button className={styles.buttonSubmit}>Join</button>
+            </div>
           ) : (
             <div className={styles.loginForm}>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc} style={{ marginTop: "3vh" }}>
-                  School
-                </div>
+                <div className={styles.inputDesc}>School</div>
                 <input
                   className={styles.inputField}
                   placeholder="Enter your school"

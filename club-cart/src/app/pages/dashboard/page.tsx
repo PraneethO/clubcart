@@ -12,13 +12,13 @@ export default function Dashboard() {
             </Link>
             <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
-                    <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)"}} />
+                    <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     cart
                 </button>
             </Link>
             <Link href="/pages/profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
-                    <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto"}} />
+                    <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     profile
                 </button>
             </Link>
@@ -35,13 +35,31 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.dashContentContainer}>
-                <div className={styles.filter} style={{height: "10rem"}}>
+                <div className={styles.filter} style={{ height: "10rem" }}>
 
-                    <MultiSelectDropdown/>
+                    <MultiSelectDropdown />
 
                 </div>
-                <div className={styles.dashContent} style={{height: "100rem"}}>
-                    GG
+                <div className={styles.dashContent} style={{ minHeight: "35rem" }}>
+                    <div className={styles.rowContainer}>
+                        <div className={styles.clubContainer}>
+                            <div className={styles.clubImagesContainer}>
+                                <img src="/default-avatar.png"/>
+                            </div>
+                            <div className={styles.clubName}>
+                                PlaceHolder
+                            </div>
+                            <div className={styles.cost}>
+                                $35.00
+                            </div>
+                            <button className={styles.clubExtra}>
+                                <div className={styles.addToCartText}>Add to Cart</div>
+                            </button>
+                        </div>
+                        {/* <div className={styles.clubContainer}>hi</div>
+                        <div className={styles.clubContainer}>hi</div>
+                        <div className={styles.clubContainer} style={{ marginRight: "0" }}>hi</div> */}
+                    </div>
                 </div>
             </div>
         </div>

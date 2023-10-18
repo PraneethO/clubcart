@@ -1,6 +1,8 @@
+"use client"
+
 import Link from "next/link";
 import styles from "./page.module.css";
-import FilterDropdown from "./filterDropdown";
+import MultiSelectDropdown from "./MultiSelectDropdown";
 
 export default function Dashboard() {
     return <main className={styles.main}>
@@ -33,10 +35,12 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.dashContentContainer}>
-                <div className={styles.filter}>
-                    <FilterDropdown/>
+                <div className={styles.filter} style={{height: "10rem"}}>
+
+                    <MultiSelectDropdown/>
+
                 </div>
-                <div className={styles.dashContent}>
+                <div className={styles.dashContent} style={{height: "100rem"}}>
                     GG
                 </div>
             </div>

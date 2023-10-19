@@ -35,7 +35,7 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.dashContentContainer}>
-                <div className={styles.filter} style={{ height: "10rem" }}>
+                <div className={styles.filter} style={{ height: "fit-content" }}>
 
                     <MultiSelectDropdown />
 

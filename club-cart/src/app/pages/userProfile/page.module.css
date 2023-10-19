@@ -47,17 +47,6 @@
     cursor: pointer;
 }
 
-.navButtonContainer {
-    transform: translateY(-.75rem);
-    display: flex;
-    margin-top: 0;
-
-    width: 2rem;
-    height: 2rem;
-    background-color: black;
-    font-family: Montserrat, sans-serif;
-}
-
 .navButton {
     width: 3rem;
     height: 3.5rem;

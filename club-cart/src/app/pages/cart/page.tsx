@@ -31,7 +31,23 @@ export default function Cart() {
                     Items
                 </div>
                 <div className={styles.orderTotalLabel}>
-                    Order Total: 
+                    Order Totals
+                </div>
+            </div>
+
+            <div className={styles.cartContentContainer}>
+                <div className={styles.itemsContent}>
+                    <div className={styles.clubItem}>
+                        <div className={styles.clubAttributes}>
+                            hi
+                        </div>
+                        <div className={styles.clubForms}>
+                            hi
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.orderContent}>
+                    hi
                 </div>
             </div>
         </div>

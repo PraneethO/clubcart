@@ -78,6 +78,7 @@
 }
 
 .imageContainer {
+    padding: 1rem;
     width: 70%;
     height: 100%;
     margin-right: 5%;
@@ -91,27 +92,64 @@
     height: 100%;
     background-color: white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    padding-top: 0.5rem;
+    
+    display: flex;
+    flex-direction: column;
 }
 
-
-
 .clubName {
-    /* display: flex; */
+    display: flex;
     width: 100%;
-    font-size: fit-content;
-    height: fit-content;
+    font-size: 1.5rem;
     font-family: bebas-neue-pro, sans-serif;
-    text-align: center;
     font-weight: bold;
 
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 0.5rem;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    padding-left: 0.5rem;
+    /* padding-bottom: 0.5rem; */
 }
 
 .cost {
-    margin-left: 0.5rem;
+    display: flex;
+    padding-left: 0.5rem;
     font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.clubDescriptionTitle {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: bebas-neue-pro, sans-serif;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+
+    border-top: #044e8b solid 5px;
+}
+
+.clubDescription {
+    display: flex;
+    flex: 1;
+
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 0.5rem;
+
+    font-family: bebas-neue-pro, sans-serif;
+    
+}
+
+.clubDescriptionText {
+    display: flex;
+    width: 100%;
+    font-family: bebas-neue-pro, sans-serif;
 }
 
 .clubExtra {
@@ -121,7 +159,7 @@
     justify-content: center;
 
     width: 100%;
-    flex: 1;
+    flex: 0.25;
     border-top: #044e8b solid 5px;
     border-bottom: none;
     border-right: none;
@@ -147,4 +185,5 @@
     cursor: pointer;
     --p: 100%;
     color: white;
+    text-decoration: underline;
 }

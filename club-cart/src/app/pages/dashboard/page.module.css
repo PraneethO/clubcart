@@ -236,4 +236,5 @@
     cursor: pointer;
     --p: 100%;
     color: white;
+    text-decoration: underline;
 }

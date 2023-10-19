@@ -35,8 +35,14 @@ export default function Dashboard() {
                 <div className={styles.cost}>
                     $35.00
                 </div>
-                <div className={styles.clubDescription}>
+                <div className={styles.clubDescriptionTitle}>
                     Description
+                </div>
+                <div className={styles.clubDescription}>
+                    (Add Description)
+                </div>
+                <div className={styles.clubDescription}>
+                    
                 </div>
                 <button className={styles.clubExtra}>
                     <div className={styles.addToCartText}>Add to Cart</div>

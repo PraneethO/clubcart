@@ -1,5 +1,4 @@
-/* css for cart */
-
+/* css for profile */
 .nav {
     display: flex;
     flex-direction: row;
@@ -80,52 +79,4 @@
 .navButton:hover {
     background-size: 100% .1em;
     cursor: pointer;
-}
-
-.cartContainer {
-    display: flex;
-    margin-top: 3rem;
-    width: 100%;
-
-    flex-direction: column;
-}
-
-.cartLabelContainer {
-    display: flex;
-    width: 100%;
-}
-
-.itemsLabel {
-    display: flex;
-    background-color: white;
-    padding: .5rem;
-    width: 73%;
-
-    text-align: left;
-
-    font-size: 1.5rem;
-    margin-left: 2%;
-
-    border-top: #044e8b solid 6px;
-
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-}
-
-.orderTotalLabel {
-    display: flex;
-    background-color: white;
-    padding: .5rem;
-    width: 21%;
-
-    justify-self: right;
-    align-self: right;
-    text-align: left;
-
-    font-size: 1.5rem;
-    margin-left: 2%;
-    margin-right: 2%;
-
-    border-top: #044e8b solid 6px;
-
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }

@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-export default function Cart() {
+export default function UserProfile() {
     return <main className={styles.main}>
         <div className={styles.nav}>
             <Link href="/pages/dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
@@ -24,16 +24,8 @@ export default function Cart() {
             </Link>
         </div>
         
-        <div className={styles.cartContainer}>
-
-            <div className={styles.cartLabelContainer}>
-                <div className={styles.itemsLabel}>
-                    Items
-                </div>
-                <div className={styles.orderTotalLabel}>
-                    Order Total: 
-                </div>
-            </div>
+        <div className={styles.profileContainer}>
+            hi
         </div>
     </main>;
 }

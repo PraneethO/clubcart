@@ -16,7 +16,7 @@ export default function Dashboard() {
                     cart
                 </button>
             </Link>
-            <Link href="/pages/profile" className={styles.link} style={{ marginLeft: "1rem" }}>
+            <Link href="/pages/userProfile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     profile

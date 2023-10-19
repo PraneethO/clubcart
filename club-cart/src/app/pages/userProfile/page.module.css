@@ -80,3 +80,15 @@
     background-size: 100% .1em;
     cursor: pointer;
 }
+
+.profileContainer {
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 70rem;
+    width: 90%;
+
+    background-color: white;
+    flex-direction: column;
+}

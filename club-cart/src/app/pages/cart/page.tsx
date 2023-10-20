@@ -43,7 +43,8 @@ export default function Cart() {
                                 hi
                             </div>
                             <div className={styles.attributes}>
-                                hi
+                                <div className={styles.attributesClubName}>Club Name</div>
+                                <div className={styles.attributesClubPrice}>$45.00</div>
                             </div>
                         </div>
                         <div className={styles.clubForms}>

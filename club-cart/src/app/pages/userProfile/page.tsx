@@ -24,8 +24,31 @@ export default function UserProfile() {
             </Link>
         </div>
         
-        <div className={styles.profileContainer}>
-            hi
+        <div className={styles.contentContainer}>
+            <div className={styles.profileContainer}>
+                <div className={styles.left}>
+                    <img src="/default-avatar.png" width={400} height={400} style={{ marginLeft: "0", marginRight: "auto" }} />
+                </div>
+                <div className={styles.right}>
+                    <div className={styles.nameContainer}>
+                        <div className={styles.bigName}>
+                            Neil Porwal
+                        </div>
+                        <div className={styles.schoolName}>
+                            North Allgheny Senior High School
+                        </div>
+                    </div>
+                    <div className={styles.contactInfoContainer}>
+                        <div className={styles.contactInfo}>
+                            Email: nporwal2@nastudents.org
+                        </div>
+                        <div className={styles.contactInfo}>
+                            Phone: (206) 486-4672
+                        </div>
+                    </div>
+                    <div className={styles.roleText}>Role(s): Student</div>
+                </div>
+            </div>
         </div>
     </main>;
 }

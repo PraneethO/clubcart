@@ -94,7 +94,7 @@ export default function Cart() {
                         </div>
                     </div>
                     <div className={styles.payNowButtonContainer}>
-                        <Link href="/pages/dashboard" style={{ textDecoration: "none"}}>
+                        <Link href="/pages/payment" style={{ textDecoration: "none"}}>
                             <div className={styles.payNowButton}>
                                 Pay Now
                             </div>

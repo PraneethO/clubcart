@@ -1,0 +1,151 @@
+/* css for payment */
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 10vh;
+  
+    text-align: left;
+    padding: 2%;
+    padding-left: 1%;
+    padding-top: 3%;
+  
+    font-size: 4.5rem;
+    color: #044e8b;
+  
+    position: flex;
+}
+
+.link {
+    transform: translateY(-.75rem);
+  
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+  
+    text-decoration: none;
+}
+
+.navLogo {
+    transform: translateY(-.25rem);
+    background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: .4s background-size;
+    background-position-y: 90%;
+}
+
+.navLogo:hover {
+    background-position-y: 90%;
+    background-size: 100% .1em;
+    cursor: pointer;
+}
+
+.navButton {
+    width: 3rem;
+    height: 3.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    font-size: 1.2rem;
+
+
+    background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: .4s background-size;
+}
+
+.navButton:hover {
+    background-size: 100% .1em;
+    cursor: pointer;
+}
+
+.paymentContainer {
+    display: flex;
+    margin-top: 3rem;
+    width: 100%;
+
+    flex-direction: column;
+}
+
+.paymentLabelsContainer {
+    display: flex;
+    width: 100%;
+}
+
+.headerLabels {
+    display: flex;
+    background-color: white;
+    padding: .5rem;
+    width: 60%;
+
+    text-align: left;
+
+    font-size: 1.5rem;
+    margin-left: 5%;
+
+    border-top: #044e8b solid 6px;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.orderTotalLabel {
+    display: flex;
+    background-color: white;
+    padding: .5rem;
+    width: 23%;
+
+    justify-self: right;
+    align-self: right;
+    text-align: left;
+
+    font-size: 1.5rem;
+    margin-left: 10%;
+    margin-right: 2%;
+
+    border-top: #044e8b solid 6px;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.cartContentContainer {
+    display: flex;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.feeContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.feeText {
+    display: flex;
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+}
+
+.feePrice {
+    display: flex;
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.125rem;
+    font-family: bebas-neue-pro, sans-serif;
+    text-align: right;
+    justify-content: right;
+}

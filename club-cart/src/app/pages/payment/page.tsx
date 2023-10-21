@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -30,12 +30,12 @@ export default function Payment() {
                         <div className={styles.infoContainer}>
                             <div className={styles.infoRow}>
                                 <div className={styles.descriptionContainer}>
-                                    <div className={styles.firstNameDescription}>First Name</div>
-                                    <div className={styles.lastNameDescription}>Last Name</div>
+                                    <div className={styles.firstHalfDescription}>First Name</div>
+                                    <div className={styles.lastHalfDescription}>Last Name</div>
                                 </div>
-                                <div className={styles.nameInputContainer}>
-                                    <input className={styles.nameInput} placeholder="Enter Your First Name" />
-                                    <input className={styles.nameInput} placeholder="Enter Your Last Name" />
+                                <div className={styles.splitInputContainer}>
+                                    <input className={styles.splitInput} placeholder="Enter Your First Name" />
+                                    <input className={styles.splitInput} placeholder="Enter Your Last Name" />
                                 </div>
                             </div>
                             <div className={styles.infoRow}>
@@ -50,36 +50,93 @@ export default function Payment() {
 
                     <div className={styles.headerLabels}>
                         Billing Address
-                        <div className={styles.infoRow}>
-                            <div className={styles.infoContainer}>
-                                <div className={styles.infoRow}>
-                                    <div className={styles.descriptionContainer}>
-                                        <div className={styles.description}>Address Line 1</div>
-                                    </div>
-                                    <input className={styles.infoInput} placeholder="Enter Your Street Address" />
-                                </div>
+                        <div className={styles.sameAddressContainer}>
 
-                                <div className={styles.infoRow}>
-                                    <div className={styles.descriptionContainer}>
-                                        <div className={styles.description}>Address Line 2</div>
-                                    </div>
-                                    <input className={styles.infoInput} placeholder="Enter Your Apt, Suite, etc. (optional)" />
+                            {/* make it so a check mark appears */}
+                            <button className={styles.sameAddressButton}></button>
+                            My Billing and Shipping are the same
+                        </div>
+                        <div className={styles.infoContainer}>
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>Address Line 1</div>
                                 </div>
-
-                                <div className={styles.infoRow}>
-                                    <div className={styles.descriptionContainer}>
-                                        <div className={styles.description}>ZIP Code Only (EX: 12345)</div>
-                                    </div>
-                                    <input className={styles.infoInput} placeholder="Enter Your ZIP Code" />
-                                </div>
+                                <input className={styles.infoInput} placeholder="Enter Your Street Address" />
                             </div>
+
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>Address Line 2</div>
+                                </div>
+                                <input className={styles.infoInput} placeholder="Enter Your Apt, Suite, etc. (optional)" />
+                            </div>
+
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>ZIP Code Only (EX: 12345)</div>
+                                </div>
+                                <input className={styles.infoInput} placeholder="Enter Your ZIP Code" />
+                            </div>
+                            <button className={styles.continueButton}>Continue</button>
+                        </div>
+                    </div>
+
+                    <div className={styles.headerLabels}>
+                        Shipping Address
+                        <div className={styles.infoContainer}>
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>Address Line 1</div>
+                                </div>
+                                <input className={styles.infoInput} placeholder="Enter Your Street Address" />
+                            </div>
+
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>Address Line 2</div>
+                                </div>
+                                <input className={styles.infoInput} placeholder="Enter Your Apt, Suite, etc. (optional)" />
+                            </div>
+
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>ZIP Code Only (EX: 12345)</div>
+                                </div>
+                                <input className={styles.infoInput} placeholder="Enter Your ZIP Code" />
+                            </div>
+                            <button className={styles.continueButton}>Continue</button>
                         </div>
                     </div>
 
                     <div className={styles.headerLabels}>
                         Payment
                         <div className={styles.infoContainer}>
-
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>Credit/Debit Card Number</div>
+                                </div>
+                                <input
+                                    className={styles.infoInput}
+                                    placeholder="Enter Your Card Number"
+                                />
+                            </div>
+                            <div className={styles.infoRow}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.firstHalfDescription}>Expiration Date</div>
+                                    <div className={styles.lastHalfDescription}>CVV</div>
+                                </div>
+                                <div className={styles.splitInputContainer}>
+                                    <input
+                                        className={styles.splitInput}
+                                        placeholder="Exp. MM/YY"
+                                    />
+                                    <input
+                                        className={styles.splitInput}
+                                        placeholder="Enter Your CVV"
+                                    />
+                                </div>
+                            </div>
+                            <button className={styles.continueButton} style={{backgroundColor: "#044e8b", border: "3px #044e8b solid"}}>Finish & Pay</button>
                         </div>
                     </div>
                 </div>

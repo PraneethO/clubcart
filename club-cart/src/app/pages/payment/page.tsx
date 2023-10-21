@@ -136,7 +136,13 @@ export default function Payment() {
                                     />
                                 </div>
                             </div>
-                            <button className={styles.continueButton} style={{backgroundColor: "#044e8b", border: "3px #044e8b solid"}}>Finish & Pay</button>
+                            <div className={styles.infoRow} style={{marginTop: "2rem"}}>
+                                <div className={styles.descriptionContainer}>
+                                    <div className={styles.description}>Alternative Method</div>
+                                </div>
+                            </div>
+                            <button className={styles.continueButton} style={{backgroundColor: "#fff", border: "3px #000 solid", color: "#000", fontStyle: "italic", marginTop: "0"}}>PayPal</button>
+                            <button className={styles.continueButton} style={{backgroundColor: "#044e8b", border: "3px #044e8b solid", marginTop: "2.5rem"}}>Finish & Pay</button>
                         </div>
                     </div>
                 </div>

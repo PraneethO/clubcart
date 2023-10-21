@@ -89,7 +89,7 @@
     display: flex;
     background-color: white;
     padding: .5rem;
-    width: 65%;
+    width: 60%;
 
     text-align: left;
 
@@ -112,7 +112,7 @@
     text-align: left;
 
     font-size: 1.5rem;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-right: 2%;
 
     border-top: #044e8b solid 6px;
@@ -130,7 +130,8 @@
     display: flex;
     background-color: white;
     /* padding: .5rem; */
-    width: 65%;
+    width: 60%;
+    height: fit-content;
     margin-left: 5%;
 
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
@@ -151,7 +152,6 @@
     font-family: bebas-neue-pro, sans-serif;
     font-weight: bold;
     
-    border-right: #044e8b solid 3px;
     align-items: center;
     justify-content: flex-end;
     text-align: right;
@@ -160,29 +160,46 @@
 
 .clubForms {
     display: flex;
+    flex-direction: column;
     width: 50%;
     height: 100%;
-    font-family: bebas-neue-pro, sans-serif;
-    font-weight: bold;
 
-    border-left: #044e8b solid 3px;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: left;
+    justify-content: center;
     text-align: left;
     padding-left: 2rem;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.clubFormsText {
+    font-size: 1.125rem;
+    font-family: bebas-neue-pro, sans-serif;
+    font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 .clubImage {
     display: flex;
-    width: 50%;
+    flex: 1;
     height: 100%;
-    background-color: pink;
-    padding: 0.5rem;
+    margin-right: auto;
+    margin-left: 0;
+    /* background-color: pink; */
+    padding: 1rem;
+}
+
+.clubImage img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 .attributes {
     display: flex;
-    width: 50%;
+    /* width: 50%; */
+    width: fit-content;
     height: 100%;
 
     font-family: bebas-neue-pro, sans-serif;
@@ -217,6 +234,8 @@
 
 .attributesClubPrice {
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-family: bebas-neue-pro, sans-serif;
     font-weight: bold;
@@ -228,15 +247,160 @@
     /* margin-right: auto; */
 }
 
+.itemBorder {
+    height: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0;
+    margin-left: auto;
+    border-right: #044e8b 4px solid;
+}
+
+
+.everythingOrderContainer {
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    height: fit-content;
+
+    margin-left: 10%;
+    margin-right: 2%;
+}
+
 
 .orderContent {
     display: flex;
+    flex-direction: column;
     background-color: white;
-    /* padding: .5rem; */
-    width: 23%;
-
-    margin-left: 5%;
-    margin-right: 2%;
+    /* padding: 1.5rem; */
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    height: fit-content;
 
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
+
+.orderBorder {
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 1rem;
+    border-bottom: #044e8b 4px solid;
+}
+
+.feeContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    width: 100%;
+    height: fit-content;
+
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.feeText {
+    display: flex;
+    flex: 1;
+    font-size: 1rem;
+    font-family: bebas-neue-pro, sans-serif;
+    text-align: left;
+    font-weight: bold;
+}
+
+.feePrice {
+    display: flex;
+    width: fit-content;
+    font-size: 1rem;
+    font-family: bebas-neue-pro, sans-serif;
+    text-align: right;
+    justify-content: right;
+}
+
+.payNowButtonContainer {
+    margin-top: 1rem;
+
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.payNowButton {
+    display: flex;
+    width: 100%;
+    border: solid 2px #044e8b;
+    color: #044e8b;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-align: center;
+    justify-content: center;
+    font-family: bebas-neue-pro, sans-serif;
+    padding: 0.75rem;
+
+
+    --c: no-repeat linear-gradient(#044e8b 0 0);
+    background: 
+      var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50% calc(100% * var(--i, 0) + .08em),
+      var(--c) calc( 200% - var(--i, 0) * 100%) 0 / 50% calc(100% * var(--i, 0) + .08em);
+    transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);  
+}
+
+.payNowButton:hover {
+    border: solid 2px #044e8b;
+    color: white;
+    cursor: pointer;
+    --i: 1;
+}
+
+.payNowText {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    font-family: bebas-neue-pro, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.payLaterButton {
+    display: flex;
+    width: 100%;
+    border: solid 2px #000;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-align: center;
+    justify-content: center;
+    font-family: bebas-neue-pro, sans-serif;
+    padding: 0.75rem;
+
+    background-color: #b3b3b3 !important;
+    color: black;
+
+    --c: no-repeat linear-gradient(#000 0 0);
+    background: 
+      var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50% calc(100% * var(--i, 0) + .08em),
+      var(--c) calc( 200% - var(--i, 0) * 100%) 0 / 50% calc(100% * var(--i, 0) + .08em);
+    transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);  
+}
+
+.payLaterButton:hover {
+    border: solid 2px #000;
+    color: white;
+    cursor: pointer;
+    --i: 1;
+}
+

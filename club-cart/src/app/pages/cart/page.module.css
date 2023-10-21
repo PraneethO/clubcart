@@ -348,18 +348,22 @@
     padding: 0.75rem;
 
 
-    --c: no-repeat linear-gradient(#044e8b 0 0);
+    /* --c: no-repeat linear-gradient(#044e8b 0 0);
     background: 
       var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50% calc(100% * var(--i, 0) + .08em),
       var(--c) calc( 200% - var(--i, 0) * 100%) 0 / 50% calc(100% * var(--i, 0) + .08em);
-    transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);  
+    transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);   */
+
+    background: linear-gradient(#044e8b 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+    transition: .4s, background-position 0s;
 }
 
 .payNowButton:hover {
     border: solid 2px #044e8b;
     color: white;
     cursor: pointer;
-    --i: 1;
+    /* --i: 1; */
+    --p: 100%;
 }
 
 .payNowText {
@@ -390,17 +394,21 @@
     background-color: #b3b3b3 !important;
     color: black;
 
-    --c: no-repeat linear-gradient(#000 0 0);
+    /* --c: no-repeat linear-gradient(#000 0 0);
     background: 
       var(--c) calc(-100% + var(--i, 0) * 100%) 100% / 50% calc(100% * var(--i, 0) + .08em),
       var(--c) calc( 200% - var(--i, 0) * 100%) 0 / 50% calc(100% * var(--i, 0) + .08em);
-    transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);  
+    transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);   */
+
+    background: linear-gradient(#000 0 0) calc(100% - var(--p,0%)) / var(--p,0%) no-repeat;
+    transition: .4s, background-position 0s;
 }
 
 .payLaterButton:hover {
     border: solid 2px #000;
     color: white;
     cursor: pointer;
-    --i: 1;
+    /* --i: 1; */
+    --p: 100%;
 }
 

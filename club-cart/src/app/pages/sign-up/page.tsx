@@ -144,18 +144,6 @@ export default function SignUp() {
                 ></input>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>Club Name</div>
-                <input
-                  className={styles.inputField}
-                  style={{width: "100%"}}
-                  placeholder="Enter Your Club's Name"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <div className={styles.inputContainer}>
                 <div className={styles.inputDesc}>Password</div>
                 <input
                   className={styles.inputField}

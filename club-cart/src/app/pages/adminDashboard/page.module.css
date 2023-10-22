@@ -65,6 +65,7 @@
 
     background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
 	transition: .4s background-size;
+    padding-bottom: 0.5rem;
 }
 
 .navButton:hover {
@@ -118,4 +119,203 @@
     border-top: #044e8b solid 6px;
 
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.dashContainerContent {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.left {
+    display: flex;
+    width: 63%;
+    height: fit-content;
+    margin-left: 2%;
+}
+
+.right {
+    display: flex;
+    width: 25%;
+    height: fit-content;
+    margin-left: 8%;
+    margin-right: 2%;
+}
+
+.dashboardButton {
+    font-size: 2rem;
+    border: none;
+    color: black;
+    width: fit-content;
+    cursor: pointer;
+    background-color: white !important;
+    transition: all 0.5s;
+}
+
+
+.dashboardButton{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.dashboardButton:before {
+    color: white;
+}
+
+.dashboardButton:after {
+    content: '»';
+    color: black;
+    font-size: 3rem;
+    position: absolute;
+    right: -17px;
+    transition: 0.5s;
+    line-height: 2.55rem;
+}
+
+.dashboardButton:hover{
+    padding-right: 2.125rem;
+    padding-left: 8px;
+}
+
+.dashboardButton:hover:after {
+    right: 15px;
+}
+
+.headerLabels {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .5rem;
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+
+    font-size: 2rem;
+    border-top: #044e8b solid 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+
+    margin-bottom: 2rem;
+}
+
+.infoContainer {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    padding-top: 0rem;
+}
+
+.infoRow {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.firstHalfDescription {
+    display: flex;
+    width: 45%;
+    font-size: 1.5rem;
+}
+
+.lastHalfDescription {
+    display: flex;
+    width: 45%;
+    font-size: 1.5rem;
+}
+
+
+.splitInputContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.splitInput {
+    display: flex;
+    width: 45%;
+    border: 3px #044e8b solid;
+    font-family: bebas-neue-pro, sans-serif;
+
+    padding: .9rem;
+    /* background-color: #f1f1f1; */
+
+    font-size: 1rem;
+    font-family: bebas-neue-pro, sans-serif;
+}
+
+.splitInput::placeholder {
+    font-family: bebas-neue-pro, sans-serif;
+}
+
+.description {
+    display: flex;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.infoInput {
+    display: flex;
+    width: 100%;
+    border: 3px #044e8b solid;
+    font-family: bebas-neue-pro, sans-serif;
+
+    padding: .9rem;
+    /* background-color: #f1f1f1; */
+
+    font-size: 1rem;
+    font-family: bebas-neue-pro, sans-serif;
+}
+
+.continueButton {
+    margin-top: 1.5rem; 
+    display: flex;
+    width: 100%;
+    border: solid 3px #044e8b;
+    
+    background-color: #fff;
+    color: #044e8b;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-align: center;
+    justify-content: center;
+    font-family: bebas-neue-pro, sans-serif;
+    padding: 0.75rem;
+
+    background: linear-gradient(#044e8b 0 0) calc(100% - var(--p,0%)) / var(--p,0%) no-repeat;
+    transition: .8s, background-position 0s;
+}
+
+.continueButton:hover {
+    cursor: pointer;
+    border: solid 3px #044e8b;
+    color: white;
+    /* --i: 1; */
+    --p: 100%;
+}
+
+.actionItemsContainer {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    /* border-top: #044e8b solid 6px; */
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.actionItem {
+
 }

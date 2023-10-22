@@ -8,15 +8,15 @@ export default function AdminDashboard() {
             <Link href="/pages/adminDashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="pages/adminDashboard" className={styles.link} style={{ marginLeft: "auto" }}>
+            <Link href="/pages/adminDashboard" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
-                    <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
-                    cart
+                    <img src="/forms-icon.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
+                    forms
                 </button>
             </Link>
-            <Link href="pages/adminDashboard" className={styles.link} style={{ marginLeft: "1rem" }}>
+            <Link href="/pages/adminDashboard" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
-                    <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
+                    <img src="/default-avatar.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     profile
                 </button>
             </Link>
@@ -34,6 +34,29 @@ export default function AdminDashboard() {
             </div>
         </div>
 
+        <div className={styles.dashContainerContent}>
+            <div className={styles.left}>
+                <div className={styles.headerLabels}>
+                    <button className={styles.dashboardButton}>Form Manager</button>
+                    <div className={styles.infoContainer}>
+
+                        <div className={styles.infoRow}>
+                            <div className={styles.descriptionContainer}>
+                                <div className={styles.description}>Club Name</div>
+                            </div>
+                            <input className={styles.infoInput} placeholder="Enter Your Email"></input>
+                        </div>
+
+                        <button className={styles.continueButton}>Continue to Forms Manager</button>
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.right}>
+                <div className={styles.actionItemsContainer}>i</div>
+            </div>
+
+        </div>
 
     </main>;
 }

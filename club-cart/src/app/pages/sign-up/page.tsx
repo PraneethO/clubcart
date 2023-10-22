@@ -59,7 +59,7 @@ export default function SignUp() {
                   <input
                     className={styles.inputField}
                     style={{width: "95%"}}
-                    placeholder="Enter your first name"
+                    placeholder="Enter Your First Name"
                     value={firstName}
                     onChange={(e) => {
                       setFirstName(e.target.value);
@@ -71,7 +71,7 @@ export default function SignUp() {
                   <input
                     className={styles.inputField}
                     style={{width: "95%", marginLeft: "5%"}}
-                    placeholder="Enter your last name"
+                    placeholder="Enter Your First Name"
                     value={lastName}
                     onChange={(e) => {
                       setLastName(e.target.value);
@@ -80,11 +80,11 @@ export default function SignUp() {
                 </div>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>Personal Email</div>
+                <div className={styles.inputDesc}>School Email</div>
                 <input
                   className={styles.inputField}
                   style={{width: "100%"}}
-                  placeholder="Enter your personal email"
+                  placeholder="Enter Your School Email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -96,7 +96,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{width: "100%"}}
-                  placeholder="Enter your password"
+                  placeholder="Enter Your password"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -108,7 +108,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{width: "100%"}}
-                  placeholder="Enter your school code"
+                  placeholder="Enter Your school code"
                   value={school}
                   onChange={(e) => {
                     setSchool(e.target.value);
@@ -124,7 +124,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{width: "100%"}}
-                  placeholder="Enter your school"
+                  placeholder="Enter Your school"
                   value={school}
                   onChange={(e) => {
                     setSchool(e.target.value);
@@ -136,7 +136,19 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{width: "100%"}}
-                  placeholder="Enter your email"
+                  placeholder="Enter Your Email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <div className={styles.inputContainer}>
+                <div className={styles.inputDesc}>Club Name</div>
+                <input
+                  className={styles.inputField}
+                  style={{width: "100%"}}
+                  placeholder="Enter Your Club's Name"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -148,7 +160,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{width: "100%"}}
-                  placeholder="Enter your password"
+                  placeholder="Enter Your Password"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -167,7 +179,7 @@ export default function SignUp() {
                   }}
                 ></input>
               </div>
-              <button className={styles.buttonSubmit}>Join</button>
+              <button className={styles.buttonSubmit}>Agree & Join</button>
             </div>
           )}
         </div>

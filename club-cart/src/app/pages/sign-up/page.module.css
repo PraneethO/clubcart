@@ -117,8 +117,11 @@
 
   color: white;
   font-size: 3rem;
+}
 
+.buttonSubmit:hover {
   cursor: pointer;
+  background-color: #1369af;
 }
 
 /* Student Login Form yes ik this is backwards but its 9:13 pm */

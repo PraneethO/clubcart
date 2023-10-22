@@ -23,7 +23,7 @@ export default function UserProfile() {
                 </button>
             </Link>
         </div>
-        
+
         <div className={styles.contentContainer}>
             <div className={styles.profileContainer}>
                 <div className={styles.left}>
@@ -49,6 +49,118 @@ export default function UserProfile() {
                     <div className={styles.roleText}>Role(s): Student</div>
                 </div>
             </div>
+
+            {/* most of this should auto fill with info from google/the school */}
+            <div className={styles.fieldChangeContainer}>
+                <div className={styles.fieldChangeTitle}>School Information</div>
+                <div className={styles.infoContainer}>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.firstHalfDescription}>State</div>
+                            <div className={styles.lastHalfDescription}>County</div>
+                        </div>
+                        <div className={styles.splitInputContainer}>
+                            <input className={styles.splitInput} />
+                            <input className={styles.splitInput} />
+                        </div>
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>School</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                </div>
+            </div>
+
+            
+            <div className={styles.fieldChangeContainer}>
+                <div className={styles.fieldChangeTitle}>School Information</div>
+                <div className={styles.infoContainer}>
+                    
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>First Name</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Last Name</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Email</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Phone Number</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Grade</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Student ID</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Birth Date</div>
+                        </div>
+                        <input className={styles.infoInput} type="date"/>
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.fieldChangeContainer}>
+                <div className={styles.fieldChangeTitle}>Address</div>
+                <div className={styles.infoContainer}>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Address Line 1</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Address Line 2</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>City</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>State</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Zip Code</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
+                </div>
+            </div>
+            <button className={styles.updateButton}>Update Changes</button>
+
         </div>
     </main>;
 }

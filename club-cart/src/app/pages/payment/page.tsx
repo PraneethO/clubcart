@@ -53,7 +53,7 @@ export default function Payment() {
                         <div className={styles.sameAddressContainer}>
 
                             {/* make it so a check mark appears */}
-                            <button className={styles.sameAddressButton}></button>
+                            <input className={styles.sameAddressButton} type="checkbox"/>
                             My Billing and Shipping are the same
                         </div>
                         <div className={styles.infoContainer}>

@@ -16,6 +16,16 @@
   text-align: center;
 
   font-size: 11vw;
+  transform: translateY(-.25rem);
+  background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: .4s background-size;
+  background-position-y: 90%;
+}
+
+.leftPartition:hover {
+  background-position-y: 90%;
+  background-size: 85% .1em;
+  cursor: pointer;
 }
 
 .rightPartition {

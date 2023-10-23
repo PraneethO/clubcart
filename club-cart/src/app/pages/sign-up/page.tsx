@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 
 import { useState } from "react";
 
+import axios from "axios";
+
 export default function SignUp() {
   const [studentForm, setStudentForm] = useState(true);
 
@@ -16,10 +18,16 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const handleAdminSubmit = () => {
+    axios
+      .post("http://localhost:3000/api/signUp")
+      .then((response) => console.log(response));
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.firstContainer}>
-        <Link href="/" style={{textDecoration: "none"}}>
+        <Link href="/" style={{ textDecoration: "none" }}>
           <div className={styles.leftPartition}>CLUBCART</div>
         </Link>
         <div className={styles.rightPartition}>
@@ -55,10 +63,12 @@ export default function SignUp() {
             <div className={styles.loginForm}>
               <div className={styles.twoWayInput}>
                 <div className={styles.inputContainer}>
-                  <div className={styles.inputDesc} style={{marginTop: "0"}}>First Name</div>
+                  <div className={styles.inputDesc} style={{ marginTop: "0" }}>
+                    First Name
+                  </div>
                   <input
                     className={styles.inputField}
-                    style={{width: "95%"}}
+                    style={{ width: "95%" }}
                     placeholder="Enter Your First Name"
                     value={firstName}
                     onChange={(e) => {
@@ -67,10 +77,15 @@ export default function SignUp() {
                   ></input>
                 </div>
                 <div className={styles.inputContainer}>
-                  <div className={styles.inputDesc} style={{marginLeft: "5%", marginTop: "0"}}>Last Name</div>
+                  <div
+                    className={styles.inputDesc}
+                    style={{ marginLeft: "5%", marginTop: "0" }}
+                  >
+                    Last Name
+                  </div>
                   <input
                     className={styles.inputField}
-                    style={{width: "95%", marginLeft: "5%"}}
+                    style={{ width: "95%", marginLeft: "5%" }}
                     placeholder="Enter Your First Name"
                     value={lastName}
                     onChange={(e) => {
@@ -83,7 +98,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>School Email</div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Enter Your School Email"
                   value={email}
                   onChange={(e) => {
@@ -95,7 +110,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Password</div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Enter Your password"
                   value={password}
                   onChange={(e) => {
@@ -107,7 +122,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>School Code</div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Enter Your school code"
                   value={school}
                   onChange={(e) => {
@@ -120,10 +135,12 @@ export default function SignUp() {
           ) : (
             <div className={styles.loginForm}>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc} style={{marginTop: "0"}}>School</div>
+                <div className={styles.inputDesc} style={{ marginTop: "0" }}>
+                  School
+                </div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Enter Your school"
                   value={school}
                   onChange={(e) => {
@@ -135,7 +152,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Email</div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Enter Your Email"
                   value={email}
                   onChange={(e) => {
@@ -147,7 +164,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Password</div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Enter Your Password"
                   value={password}
                   onChange={(e) => {
@@ -159,7 +176,7 @@ export default function SignUp() {
                 <div className={styles.inputDesc}>Confirm Password</div>
                 <input
                   className={styles.inputField}
-                  style={{width: "100%"}}
+                  style={{ width: "100%" }}
                   placeholder="Confirm Your Password"
                   value={confirmPassword}
                   onChange={(e) => {
@@ -167,7 +184,12 @@ export default function SignUp() {
                   }}
                 ></input>
               </div>
-              <button className={styles.buttonSubmit}>Agree & Join</button>
+              <button
+                className={styles.buttonSubmit}
+                onClick={handleAdminSubmit}
+              >
+                Agree & Join
+              </button>
             </div>
           )}
         </div>

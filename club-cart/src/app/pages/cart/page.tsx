@@ -16,7 +16,7 @@ export default function Cart() {
                     cart
                 </button>
             </Link>
-            <Link href="/pages/userProfile" className={styles.link} style={{ marginLeft: "1rem" }}>
+            <Link href="/pages/user-profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     profile
@@ -103,7 +103,7 @@ export default function Cart() {
                             OR
                         </div>
                         {/* change to forms page */}
-                        <Link href="/pages/dashboard" style={{ textDecoration: "none"}}>
+                        <Link href="/pages/form-manager" style={{ textDecoration: "none"}}>
                             <div className={styles.payLaterButton}>
                                 Continue To Forms
                             </div>

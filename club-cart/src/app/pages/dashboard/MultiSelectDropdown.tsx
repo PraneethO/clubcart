@@ -27,6 +27,9 @@ const MultiSelectDropdown = () => {
 
   return (
     <div className="multi-select-dropdown">
+      <div className="selected-options">
+        Selected: {selectedOptions.join(', ')}
+      </div>
       <div className="dropdown-header" onClick={toggleDropdown}>
         <span>Select Options</span>
         <i className={`arrow ${isOpen ? 'up' : 'down'}`}></i>
@@ -46,9 +49,6 @@ const MultiSelectDropdown = () => {
           ))}
         </div>
       )}
-      <div className="selected-options">
-        Selected: {selectedOptions.join(', ')}
-      </div>
     </div>
   );
 };

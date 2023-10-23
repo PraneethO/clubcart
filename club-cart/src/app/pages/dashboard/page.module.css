@@ -167,9 +167,9 @@
     flex-direction: column;
 }
 
-.clubContainer:hover {
+/* .clubContainer:hover {
     cursor: pointer;
-}
+} */
 
 .clubImagesContainer {
     display: flex;
@@ -221,7 +221,7 @@
 
     font-family: bebas-neue-pro, sans-serif;
     font-size: 1rem;
-    text-transform: underline;
+    /* text-transform: underline; */
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -239,5 +239,5 @@
     cursor: pointer;
     --p: 100%;
     color: white;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }

@@ -130,6 +130,7 @@
 
 .left {
     display: flex;
+    flex-direction: column;
     width: 63%;
     height: fit-content;
     margin-left: 2%;
@@ -172,9 +173,9 @@
     color: black;
     font-size: 3rem;
     position: absolute;
-    right: -17px;
+    right: -30px;
     transition: 0.5s;
-    line-height: 2.55rem;
+    line-height: 2.54rem;
 }
 
 .dashboardButton:hover{
@@ -286,8 +287,8 @@
     width: 100%;
     border: solid 3px #044e8b;
     
-    background-color: #fff;
-    color: #044e8b;
+    background-color: #044e8b;
+    color: #fff;
     font-weight: bold;
     font-size: 1.125rem;
     text-align: center;
@@ -295,27 +296,38 @@
     font-family: bebas-neue-pro, sans-serif;
     padding: 0.75rem;
 
-    background: linear-gradient(#044e8b 0 0) calc(100% - var(--p,0%)) / var(--p,0%) no-repeat;
-    transition: .8s, background-position 0s;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
 }
 
-.continueButton:hover {
+.continueButton:hover, .continueButton:focus, .continueButton:active {
     cursor: pointer;
-    border: solid 3px #044e8b;
-    color: white;
-    /* --i: 1; */
-    --p: 100%;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .actionItemsContainer {
+    border-top: solid 6px #044e8b;
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: fit-content;
+    padding: 0.5rem;
     /* border-top: #044e8b solid 6px; */
     background-color: white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
 .actionItem {
-
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    /* content: ">"; */
+    color: black;
 }

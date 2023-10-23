@@ -1,0 +1,74 @@
+/* css for form manager */
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 10vh;
+  
+    text-align: left;
+    padding: 2%;
+    padding-left: 1%;
+    padding-top: 3%;
+  
+    font-size: 4.5rem;
+    color: #044e8b;
+  
+    position: flex;
+}
+
+.link {
+    transform: translateY(-.75rem);
+  
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+  
+    text-decoration: none;
+}
+
+.navLogo {
+    transform: translateY(-.25rem);
+    background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: .4s background-size;
+    background-position-y: 90%;
+}
+
+.navLogo:hover {
+    background-position-y: 90%;
+    background-size: 100% .1em;
+    cursor: pointer;
+}
+
+.navButton {
+    width: 3rem;
+    height: 3.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    font-size: 1.2rem;
+
+
+    background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: .4s background-size;
+    padding-bottom: 0.5rem;
+}
+
+.navButton:hover {
+    background-size: 100% .1em;
+    cursor: pointer;
+}

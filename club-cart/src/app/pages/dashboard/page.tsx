@@ -35,11 +35,56 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.dashContentContainer}>
-                <div className={styles.filter} style={{ height: "fit-content" }}>
+                <div className={styles.filter}>
+                    {/* <MultiSelectDropdown /> */}
+                    <div className={styles.filterCategoryLabel}>Areas of Interest</div>
 
-                    <MultiSelectDropdown />
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Art/Culinary Arts</div>
+                    </div>
 
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Business</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Computer Science</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Forigen Language</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Honor Society</div>
+                    </div>
+                    
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Math and Science</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Medicine</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Public Speaking/Competative Events</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Other</div>
+                    </div>
                 </div>
+
                 <div className={styles.dashContent} style={{ minHeight: "35rem" }}>
                     <div className={styles.rowContainer}>
                         <div className={styles.clubContainer}>

@@ -3,21 +3,18 @@ import './MultiSelectDropdown.css';
 
 const MultiSelectDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]); // Specify the type as a string array
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [arrowRotation, setArrowRotation] = useState(0); // Initialize the rotation to 0
 
-  const options: string[] = [
-    'Option 1',
-    'Option 2',
-    'Option 3',
-    'Option 4',
-  ];
+  const options: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+    // Update the arrow rotation based on isOpen
+    setArrowRotation(isOpen ? 0 : 90);
   };
 
   const handleOptionChange = (option: string) => {
-    // Specify the type of the 'option' parameter
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions.filter((item) => item !== option));
     } else {
@@ -31,8 +28,11 @@ const MultiSelectDropdown = () => {
         Selected: {selectedOptions.join(', ')}
       </div>
       <div className="dropdown-header" onClick={toggleDropdown}>
+        <i
+          className="arrow"
+          style={{ transform: `rotate(${arrowRotation}deg)` }} // Apply rotation here
+        ></i>
         <span>Select Options</span>
-        <i className={`arrow ${isOpen ? 'up' : 'down'}`}></i>
       </div>
       {isOpen && (
         <div className="dropdown-content">
@@ -41,6 +41,7 @@ const MultiSelectDropdown = () => {
               <input
                 type="checkbox"
                 value={option}
+                className="dropdownItems"
                 checked={selectedOptions.includes(option)}
                 onChange={() => handleOptionChange(option)}
               />

@@ -72,7 +72,7 @@ export default function Home() {
             
           </div>
           <button className={styles.inputButton} onClick={handleSubmit}>
-            Login
+            LOGIN
           </button>
           <a href="/pages/sign-up" className={styles.inputExtra}>
             Don&rsquo;t have an account? Sign Up

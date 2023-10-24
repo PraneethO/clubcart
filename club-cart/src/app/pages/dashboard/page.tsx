@@ -41,7 +41,7 @@ export default function Dashboard() {
 
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>
-                        <div className={styles.filterDescription}>Art/Culinary Arts</div>
+                        <div className={styles.filterDescription}>Arts</div>
                     </div>
 
                     <div className={styles.filterInputandDescriptionContainer}>
@@ -52,6 +52,16 @@ export default function Dashboard() {
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>
                         <div className={styles.filterDescription}>Computer Science</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Cultural</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Environmental</div>
                     </div>
 
                     <div className={styles.filterInputandDescriptionContainer}>
@@ -77,6 +87,11 @@ export default function Dashboard() {
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>
                         <div className={styles.filterDescription}>Public Speaking/Competative Events</div>
+                    </div>
+
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Service</div>
                     </div>
 
                     <div className={styles.filterInputandDescriptionContainer}>

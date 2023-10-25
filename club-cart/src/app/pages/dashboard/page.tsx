@@ -41,7 +41,7 @@ export default function Dashboard() {
 
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>
-                        <div className={styles.filterDescription}>Arts</div>
+                        <div className={styles.filterDescription}>Art</div>
                     </div>
 
                     <div className={styles.filterInputandDescriptionContainer}>
@@ -73,7 +73,7 @@ export default function Dashboard() {
                         <input className={styles.filterInput} type="checkbox"></input>
                         <div className={styles.filterDescription}>Honor Society</div>
                     </div>
-                    
+
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>
                         <div className={styles.filterDescription}>Math and Science</div>
@@ -98,13 +98,27 @@ export default function Dashboard() {
                         <input className={styles.filterInput} type="checkbox"></input>
                         <div className={styles.filterDescription}>Other</div>
                     </div>
+
+                    <div className={styles.filterCategoryLabel} style={{ marginTop: "1rem" }}>Amount of Dues</div>
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>Under $25</div>
+                    </div>
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>$25 - $50</div>
+                    </div>
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>$50 - $500</div>
+                    </div>
                 </div>
 
                 <div className={styles.dashContent} style={{ minHeight: "35rem" }}>
                     <div className={styles.rowContainer}>
                         <div className={styles.clubContainer}>
                             <div className={styles.clubImagesContainer}>
-                                <img src="/default-avatar.png"/>
+                                <img src="/default-avatar.png" />
                             </div>
                             <div className={styles.clubName}>
                                 PlaceHolder

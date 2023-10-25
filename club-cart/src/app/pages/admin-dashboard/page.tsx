@@ -37,7 +37,7 @@ export default function AdminDashboard() {
         <div className={styles.dashContainerContent}>
             <div className={styles.left}>
                 <div className={styles.headerLabels}>
-                    <Link href="/pages/formManager">
+                    <Link href="/pages/form-manager">
                         <button className={styles.dashboardButton}>Form Manager</button>
                     </Link>
                     <div className={styles.infoContainer}>
@@ -74,14 +74,14 @@ export default function AdminDashboard() {
                             <input className={styles.infoInput} placeholder="Paste The Link to Any External Forms"></input>
                         </div> */}
 
-                        <Link href="/pages/formManager" style={{ textDecoration: "none" }}>
+                        <Link href="/pages/form-manager" style={{ textDecoration: "none" }}>
                             <button className={styles.continueButton}>Continue to Form Manager</button>
                         </Link>
                     </div>
                 </div>
 
                 <div className={styles.headerLabels}>
-                    <Link href="/pages/formManager">
+                    <Link href="/pages/form-manager">
                         <button className={styles.dashboardButton}>CHANGE</button>
                     </Link>
                     <div className={styles.infoContainer}>
@@ -93,7 +93,7 @@ export default function AdminDashboard() {
                             <input className={styles.infoInput} placeholder="Enter Your Club's Name"></input>
                         </div>
 
-                        <Link href="/pages/formManager" style={{ textDecoration: "none" }}>
+                        <Link href="/pages/form-manager" style={{ textDecoration: "none" }}>
                             <button className={styles.continueButton}>Continue to (CHANGE)</button>
                         </Link>
                     </div>

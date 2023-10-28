@@ -7,10 +7,10 @@ import Link from "next/link";
 export default function Cart() {
     return <main className={styles.main}>
         <div className={styles.nav}>
-            <Link href="/pages/dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
+            <Link href="/pages/shop" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/dashboard" className={styles.link} style={{ marginLeft: "auto" }}>
+            <Link href="/pages/shop" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
                     <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     Shop
@@ -110,7 +110,7 @@ export default function Cart() {
                             OR
                         </div>
                         {/* change to forms page */}
-                        <Link href="/pages/form-manager" style={{ textDecoration: "none" }}>
+                        <Link href="/pages/forms" style={{ textDecoration: "none" }}>
                             <div className={styles.payLaterButton}>
                                 Continue To Forms
                             </div>

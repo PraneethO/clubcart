@@ -355,7 +355,7 @@
     transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);   */
 
     background: linear-gradient(#044e8b 0 0) var(--p, 0) / var(--p, 0) no-repeat;
-    transition: .4s, background-position 0s;
+    transition: 1s, background-position 0s;
 }
 
 .payNowButton:hover {
@@ -401,7 +401,7 @@
     transition: .2s calc(var(--i, 0) * .2s), background-position .2s calc(.2s - var(--i, 0) * .2s);   */
 
     background: linear-gradient(#000 0 0) calc(100% - var(--p,0%)) / var(--p,0%) no-repeat;
-    transition: .4s, background-position 0s;
+    transition: 1s, background-position 0s;
 }
 
 .payLaterButton:hover {

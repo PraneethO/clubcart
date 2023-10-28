@@ -4,23 +4,23 @@ import Link from "next/link";
 
 export default function Payment() {
     return <main className={styles.main}>
-<div className={styles.nav}>
-            <Link href="/pages/dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
+        <div className={styles.nav}>
+            <Link href="/pages/shop" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/dashboard" className={styles.link} style={{ marginLeft: "auto"}}>
+            <Link href="/pages/shop" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
-                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto"}} />
+                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     Shop
                 </button>
             </Link>
-            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "1rem"}}>
+            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     cart
                 </button>
             </Link>
-            
+
             <Link href="/pages/user-profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
@@ -60,7 +60,7 @@ export default function Payment() {
                         <div className={styles.sameAddressContainer}>
 
                             {/* make it so a check mark appears */}
-                            <input className={styles.sameAddressButton} type="checkbox"/>
+                            <input className={styles.sameAddressButton} type="checkbox" />
                             My Billing and Shipping are the same
                         </div>
                         <div className={styles.infoContainer}>
@@ -143,13 +143,13 @@ export default function Payment() {
                                     />
                                 </div>
                             </div>
-                            <div className={styles.infoRow} style={{marginTop: "2rem"}}>
+                            <div className={styles.infoRow} style={{ marginTop: "2rem" }}>
                                 <div className={styles.descriptionContainer}>
                                     <div className={styles.description}>Alternative Method</div>
                                 </div>
                             </div>
-                            <button className={styles.continueButton} style={{backgroundColor: "#fff", border: "3px #000 solid", color: "#000", fontStyle: "italic", marginTop: "0"}}>PayPal</button>
-                            <button className={styles.continueButton} style={{backgroundColor: "#044e8b", border: "3px #044e8b solid", color: "white", marginTop: "2.5rem"}}>Finish & Pay</button>
+                            <button className={styles.continueButton} style={{ backgroundColor: "#fff", border: "3px #000 solid", color: "#000", fontStyle: "italic", marginTop: "0" }}>PayPal</button>
+                            <button className={styles.continueButton} style={{ backgroundColor: "#044e8b", border: "3px #044e8b solid", color: "white", marginTop: "2.5rem" }}>Finish & Pay</button>
                         </div>
                     </div>
                 </div>

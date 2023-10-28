@@ -7,10 +7,10 @@ import MultiSelectDropdown from "./MultiSelectDropdown";
 export default function Dashboard() {
     return <main className={styles.main}>
         <div className={styles.nav}>
-            <Link href="/pages/dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
+            <Link href="/pages/shop" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/dashboard" className={styles.link} style={{ marginLeft: "auto" }}>
+            <Link href="/pages/shop" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
                     <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     Shop
@@ -110,7 +110,11 @@ export default function Dashboard() {
                     <div className={styles.filterCategoryLabel} style={{ marginTop: "1rem" }}>Amount of Dues</div>
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>
-                        <div className={styles.filterDescription}>Under $25</div>
+                        <div className={styles.filterDescription}>Free</div>
+                    </div>
+                    <div className={styles.filterInputandDescriptionContainer}>
+                        <input className={styles.filterInput} type="checkbox"></input>
+                        <div className={styles.filterDescription}>$1 - $25</div>
                     </div>
                     <div className={styles.filterInputandDescriptionContainer}>
                         <input className={styles.filterInput} type="checkbox"></input>

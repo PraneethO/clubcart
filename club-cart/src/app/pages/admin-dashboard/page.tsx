@@ -8,7 +8,13 @@ export default function AdminDashboard() {
             <Link href="/pages/admin-dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/form-manager" className={styles.link} style={{ marginLeft: "auto" }}>
+            <Link href="/pages/admin-dashboard" className={styles.link} style={{ marginLeft: "auto" }}>
+                <button className={styles.navButton}>
+                    <img src="/home-icon.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
+                    Home
+                </button>
+            </Link>
+            <Link href="/pages/form-manager" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/forms-icon.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     forms
@@ -52,7 +58,7 @@ export default function AdminDashboard() {
                         <div className={styles.infoRow}>
                             <div className={styles.descriptionContainer}>
                                 <div className={styles.firstHalfDescription}>DUES</div>
-                                <div className={styles.lastHalfDescription}>Number of Additional Forms</div>
+                                <div className={styles.lastHalfDescription}>Number of External Forms</div>
                             </div>
                             <div className={styles.splitInputContainer}>
                                 <input
@@ -63,6 +69,7 @@ export default function AdminDashboard() {
                                     className={styles.splitInput}
                                     placeholder="Enter the Number of External Forms You Would Like Include"
                                     type="number"
+                                    min={0}
                                 />
                             </div>
                         </div>

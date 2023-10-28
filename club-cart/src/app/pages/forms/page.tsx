@@ -1,10 +1,9 @@
 "use client"
 
-import React from "react";
-import styles from "./page.module.css";
 import Link from "next/link";
+import styles from "./page.module.css";
 
-export default function Dashboard() {
+export default function Forms() {
     return <main className={styles.main}>
         <div className={styles.nav}>
             <Link href="/pages/shop" style={{ textDecoration: "none", color: "#044e8b" }}>
@@ -29,32 +28,6 @@ export default function Dashboard() {
                     profile
                 </button>
             </Link>
-        </div>
-
-        <div className={styles.contentContainer}>
-            <div className={styles.imageContainer}>
-                hi
-            </div>
-            <div className={styles.clubContentContainer}>
-                <div className={styles.clubName}>
-                    PlaceHolder
-                </div>
-                <div className={styles.cost}>
-                    $35.00
-                </div>
-                <div className={styles.clubDescriptionTitle}>
-                    Description
-                </div>
-                <div className={styles.clubDescription}>
-                    (Add Description)
-                </div>
-                <div className={styles.clubDescription}>
-
-                </div>
-                <button className={styles.clubExtra}>
-                    <div className={styles.addToCartText}>Add to Cart</div>
-                </button>
-            </div>
         </div>
     </main>
 }

@@ -198,15 +198,17 @@
     height: 22.5rem;
     margin-right: 4%;
 
+    color: black;
     background-color: white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 
     flex-direction: column;
+    text-decoration: none;
 }
 
-/* .clubContainer:hover {
-    cursor: pointer;
-} */
+.clubContainer:hover {
+    cursor: default;
+}
 
 .clubImagesContainer {
     display: flex;

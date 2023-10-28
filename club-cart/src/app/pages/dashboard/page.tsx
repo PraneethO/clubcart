@@ -10,12 +10,19 @@ export default function Dashboard() {
             <Link href="/pages/dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "auto" }}>
+            <Link href="/pages/dashboard" className={styles.link} style={{ marginLeft: "auto" }}>
+                <button className={styles.navButton}>
+                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
+                    Shop
+                </button>
+            </Link>
+            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     cart
                 </button>
             </Link>
+
             <Link href="/pages/user-profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
@@ -23,6 +30,7 @@ export default function Dashboard() {
                 </button>
             </Link>
         </div>
+
         <div className={styles.dashContainer}>
 
             <div className={styles.dashLabelContainer}>
@@ -116,7 +124,9 @@ export default function Dashboard() {
 
                 <div className={styles.dashContent} style={{ minHeight: "35rem" }}>
                     <div className={styles.rowContainer}>
-                        <div className={styles.clubContainer}>
+
+                        <Link href="/pages/club-view" className={styles.clubContainer}>
+                            {/* <div className={styles.clubContainer}> */}
                             <div className={styles.clubImagesContainer}>
                                 <img src="/default-avatar.png" />
                             </div>
@@ -129,7 +139,8 @@ export default function Dashboard() {
                             <button className={styles.clubExtra}>
                                 <div className={styles.addToCartText}>Add to Cart</div>
                             </button>
-                        </div>
+                            {/* </div> */}
+                        </Link>
                         {/* <div className={styles.clubContainer}>hi</div>
                         <div className={styles.clubContainer}>hi</div>
                         <div className={styles.clubContainer} style={{ marginRight: "0" }}>hi</div> */}

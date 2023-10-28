@@ -10,12 +10,19 @@ export default function Cart() {
             <Link href="/pages/dashboard" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "auto" }}>
+            <Link href="/pages/dashboard" className={styles.link} style={{ marginLeft: "auto" }}>
+                <button className={styles.navButton}>
+                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
+                    Shop
+                </button>
+            </Link>
+            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     cart
                 </button>
             </Link>
+
             <Link href="/pages/user-profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
@@ -23,7 +30,7 @@ export default function Cart() {
                 </button>
             </Link>
         </div>
-        
+
         <div className={styles.cartContainer}>
 
             <div className={styles.cartLabelContainer}>
@@ -40,12 +47,12 @@ export default function Cart() {
                     <div className={styles.clubItem}>
                         <div className={styles.clubAttributes}>
                             <div className={styles.clubImage}>
-                                <img src="/default-avatar.png"/>
+                                <img src="/default-avatar.png" />
                             </div>
                             <div className={styles.attributes}>
                                 <div className={styles.attributesContainer}>
                                     <div className={styles.attributesClubName}>Club Name
-                                    <div className={styles.attributesClubPrice}>$45.00</div></div>
+                                        <div className={styles.attributesClubPrice}>$45.00</div></div>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +64,7 @@ export default function Cart() {
                             <div className={styles.clubFormsText}>
                                 - Health Form
                             </div>
-                            <div className={styles.clubFormsText} style={{paddingBottom: "0"}}>
+                            <div className={styles.clubFormsText} style={{ paddingBottom: "0" }}>
                                 - Registration Form
                             </div>
                         </div>
@@ -83,7 +90,7 @@ export default function Cart() {
                             </div>
                         </div>
                         <div className={styles.orderBorder}></div>
-                        
+
                         <div className={styles.feeContainer}>
                             <div className={styles.feeText}>
                                 Total
@@ -94,7 +101,7 @@ export default function Cart() {
                         </div>
                     </div>
                     <div className={styles.payNowButtonContainer}>
-                        <Link href="/pages/payment" style={{ textDecoration: "none"}}>
+                        <Link href="/pages/payment" style={{ textDecoration: "none" }}>
                             <div className={styles.payNowButton}>
                                 Pay Now
                             </div>
@@ -103,13 +110,13 @@ export default function Cart() {
                             OR
                         </div>
                         {/* change to forms page */}
-                        <Link href="/pages/form-manager" style={{ textDecoration: "none"}}>
+                        <Link href="/pages/form-manager" style={{ textDecoration: "none" }}>
                             <div className={styles.payLaterButton}>
                                 Continue To Forms
                             </div>
                         </Link>
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
     </main>;

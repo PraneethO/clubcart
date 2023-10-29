@@ -32,7 +32,7 @@ export default function AdminDashboard() {
 
             <div className={styles.dashLabelContainer}>
                 <div className={styles.greetingLabel}>
-                    Welcome!
+                    Welcome, Name!
                 </div>
                 <div className={styles.dashLabel}>
                     Analytics

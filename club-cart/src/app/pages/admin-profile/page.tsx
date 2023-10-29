@@ -10,19 +10,19 @@ export default function AdminProfile() {
             <Link href="/pages/shop" style={{ textDecoration: "none", color: "#044e8b" }}>
                 <div className={styles.navLogo}>CLUBCART</div>
             </Link>
-            <Link href="/pages/shop" className={styles.link} style={{ marginLeft: "auto"}}>
+            <Link href="/pages/shop" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
-                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto"}} />
+                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     Shop
                 </button>
             </Link>
-            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "1rem"}}>
+            <Link href="/pages/cart" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/shopping-cart.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     cart
                 </button>
             </Link>
-            
+
             <Link href="/pages/user-profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
@@ -39,7 +39,7 @@ export default function AdminProfile() {
                 <div className={styles.right}>
                     <div className={styles.nameContainer}>
                         <div className={styles.bigName}>
-                            Neil Porwal
+                            Mrs. Jane Doe
                         </div>
                         <div className={styles.schoolName}>
                             North Allgheny Senior High School
@@ -47,13 +47,13 @@ export default function AdminProfile() {
                     </div>
                     <div className={styles.contactInfoContainer}>
                         <div className={styles.contactInfo}>
-                            Email: nporwal2@nastudents.org
+                            Email: jdoe@northallgheny.org
                         </div>
                         <div className={styles.contactInfo}>
-                            Phone: (206) 486-4672
+                            Phone: (412) 978-6672
                         </div>
                     </div>
-                    <div className={styles.roleText}>Role(s): Student</div>
+                    <div className={styles.roleText}>Role(s): Sponsor</div>
                 </div>
             </div>
 
@@ -80,11 +80,17 @@ export default function AdminProfile() {
                 </div>
             </div>
 
-            
+
             <div className={styles.fieldChangeContainer}>
-                <div className={styles.fieldChangeTitle}>School Information</div>
+                <div className={styles.fieldChangeTitle}>Sponsor Information</div>
                 <div className={styles.infoContainer}>
-                    
+
+                    <div className={styles.infoRow}>
+                        <div className={styles.descriptionContainer}>
+                            <div className={styles.description}>Prefix</div>
+                        </div>
+                        <input className={styles.infoInput} />
+                    </div>
                     <div className={styles.infoRow}>
                         <div className={styles.descriptionContainer}>
                             <div className={styles.description}>First Name</div>
@@ -109,63 +115,16 @@ export default function AdminProfile() {
                         </div>
                         <input className={styles.infoInput} />
                     </div>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>Grade</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>Student ID</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
-
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>Birth Date</div>
-                        </div>
-                        <input className={styles.infoInput} type="date"/>
-                    </div>
                 </div>
             </div>
 
-            <div className={styles.fieldChangeContainer}>
-                <div className={styles.fieldChangeTitle}>Address</div>
+            {/* <div className={styles.fieldChangeContainer}>
+                <div className={styles.fieldChangeTitle}>Clubs</div>
                 <div className={styles.infoContainer}>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>Address Line 1</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>Address Line 2</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>City</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>State</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
-                    <div className={styles.infoRow}>
-                        <div className={styles.descriptionContainer}>
-                            <div className={styles.description}>Zip Code</div>
-                        </div>
-                        <input className={styles.infoInput} />
-                    </div>
                 </div>
-            </div>
+            </div> */}
+            {/* idk if we want to make it so only one person per club and you can transfer ownership, that's prob too complicated for now */}
+
             <button className={styles.updateButton}>Update Changes</button>
 
         </div>

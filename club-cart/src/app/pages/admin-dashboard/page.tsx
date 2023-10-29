@@ -10,19 +10,19 @@ export default function AdminDashboard() {
             </Link>
             <Link href="/pages/admin-dashboard" className={styles.link} style={{ marginLeft: "auto" }}>
                 <button className={styles.navButton}>
-                    <img src="/home-icon.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
+                    <img src="/home-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     Home
                 </button>
             </Link>
             <Link href="/pages/form-manager" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
-                    <img src="/forms-icon.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
+                    <img src="/forms-icon.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto", transform: "translateX(-2px)" }} />
                     forms
                 </button>
             </Link>
             <Link href="/pages/admin-dashboard" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
-                    <img src="/default-avatar.png" width={40} height={40} style={{ marginLeft: "auto", marginRight: "auto" }} />
+                    <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     profile
                 </button>
             </Link>
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
                     Welcome!
                 </div>
                 <div className={styles.dashLabel}>
-                    Action Items
+                    Analytics
                 </div>
             </div>
         </div>
@@ -108,10 +108,33 @@ export default function AdminDashboard() {
             </div>
 
             <div className={styles.right}>
-                <div className={styles.actionItemsContainer}>
-                    <div className={styles.actionItem}>- Forms</div>
-                    <div className={styles.actionItem}>- Forms</div>
-                    <div className={styles.actionItem}>- Forms</div>
+                <div className={styles.analyticsContainer}>
+                    <div className={styles.analyticsContentContainer}>
+                        <div className={styles.analyticsText}>
+                            Number of Students
+                        </div>
+                        <div className={styles.analytic}>
+                            57
+                        </div>
+                    </div>
+
+                    <div className={styles.analyticsContentContainer}>
+                        <div className={styles.analyticsText}>
+                            Dues Collected
+                        </div>
+                        <div className={styles.analytic}>
+                            $2,095
+                        </div>
+                    </div>
+                    <div className={styles.orderBorder}></div>
+
+                    <Link href="/analytics" style={{color: "#044e8b"}}>
+                        <div className={styles.analyticsContentContainer}>
+                            <div className={styles.analyticsText}>
+                                See More
+                            </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
 

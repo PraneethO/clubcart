@@ -29,5 +29,57 @@ export default function Forms() {
                 </button>
             </Link>
         </div>
+
+        <div className={styles.dashContainer}>
+
+            <div className={styles.dashLabelContainer}>
+                <div className={styles.greetingLabel}>
+                    Forms to Complete
+                </div>
+                <div className={styles.dashLabel}>
+                    External Forms
+                </div>
+            </div>
+        </div>
+
+        <div className={styles.dashContainerContent}>
+            <div className={styles.left}>
+                <div className={styles.headerLabels}>
+                    <Link href="/pages/form-manager">
+                        <button className={styles.dashboardButton}>CHANGE</button>
+                    </Link>
+                    <div className={styles.infoContainer}>
+
+                        <div className={styles.infoRow}>
+                            <div className={styles.descriptionContainer}>
+                                <div className={styles.description}>Club Name</div>
+                            </div>
+                            <input className={styles.infoInput} placeholder="Enter Your Club's Name"></input>
+                        </div>
+
+                        <Link href="/pages/form-manager" style={{ textDecoration: "none" }}>
+                            <button className={styles.continueButton}>Continue to (CHANGE)</button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.right}>
+                <div className={styles.actionItemsContainer}>
+                    <Link href="" style={{ color: "#044e8b" }}>
+                        <div className={styles.actionItem}>DECA Sign Up Form</div>
+                    </Link>
+                    <Link href="" style={{ color: "#044e8b" }}>
+                        <div className={styles.actionItem}>Speech and Debate Registration Form</div>
+                    </Link>
+                    <Link href="" style={{ color: "#044e8b" }}>
+                        <div className={styles.actionItem}>Forms</div>
+                    </Link>
+                </div>
+            </div>
+
+        </div>
+
+
     </main>
 }

@@ -20,7 +20,7 @@ export default function AdminDashboard() {
                     forms
                 </button>
             </Link>
-            <Link href="/pages/admin-dashboard" className={styles.link} style={{ marginLeft: "1rem" }}>
+            <Link href="/pages/admin-profile" className={styles.link} style={{ marginLeft: "1rem" }}>
                 <button className={styles.navButton}>
                     <img src="/default-avatar.png" width={35} height={35} style={{ marginLeft: "auto", marginRight: "auto" }} />
                     profile

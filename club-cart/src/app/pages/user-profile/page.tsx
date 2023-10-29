@@ -82,7 +82,7 @@ export default function UserProfile() {
 
             
             <div className={styles.fieldChangeContainer}>
-                <div className={styles.fieldChangeTitle}>School Information</div>
+                <div className={styles.fieldChangeTitle}>Student Information</div>
                 <div className={styles.infoContainer}>
                     
                     <div className={styles.infoRow}>

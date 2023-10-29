@@ -134,6 +134,7 @@
     width: 63%;
     height: fit-content;
     margin-left: 2%;
+    margin-bottom: 10rem;
 }
 
 .right {
@@ -260,6 +261,13 @@
 
 .splitInput::placeholder {
     font-family: bebas-neue-pro, sans-serif;
+}
+
+.stackedInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.5rem;
 }
 
 .description {

@@ -127,22 +127,24 @@
 }
 
 .itemsContent {
+    flex-direction: column;
     display: flex;
-    background-color: white;
     /* padding: .5rem; */
     width: 60%;
     height: fit-content;
     margin-left: 5%;
-
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10rem;
 }
 
 .clubItem {
+    background-color: white;
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 17.5rem;
     font-family: bebas-neue-pro, sans-serif;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
 .clubAttributes {
@@ -265,6 +267,8 @@
 
     margin-left: 10%;
     margin-right: 2%;
+
+    margin-bottom: 10rem;
 }
 
 
@@ -412,3 +416,22 @@
     --p: 100%;
 }
 
+.formsContainer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
+    /* border-top: #044e8b solid 6px; */
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.actionItem {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    /* content: ">"; */
+}

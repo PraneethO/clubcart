@@ -43,27 +43,6 @@ export default function Forms() {
         </div>
 
         <div className={styles.dashContainerContent}>
-            <div className={styles.left}>
-                <div className={styles.headerLabels}>
-                    <Link href="/pages/form-manager">
-                        <button className={styles.dashboardButton}>CHANGE</button>
-                    </Link>
-                    <div className={styles.infoContainer}>
-
-                        <div className={styles.infoRow}>
-                            <div className={styles.descriptionContainer}>
-                                <div className={styles.description}>Club Name</div>
-                            </div>
-                            <input className={styles.infoInput} placeholder="Enter Your Club's Name"></input>
-                        </div>
-
-                        <Link href="/pages/form-manager" style={{ textDecoration: "none" }}>
-                            <button className={styles.continueButton}>Continue to (CHANGE)</button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-
             <div className={styles.right}>
                 <div className={styles.actionItemsContainer}>
                     <Link href="" style={{ color: "#044e8b" }}>

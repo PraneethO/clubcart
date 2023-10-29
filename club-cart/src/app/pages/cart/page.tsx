@@ -44,6 +44,7 @@ export default function Cart() {
 
             <div className={styles.cartContentContainer}>
                 <div className={styles.itemsContent}>
+
                     <div className={styles.clubItem}>
                         <div className={styles.clubAttributes}>
                             <div className={styles.clubImage}>
@@ -69,7 +70,35 @@ export default function Cart() {
                             </div>
                         </div>
                     </div>
+
+                    <div className={styles.clubItem}>
+                        <div className={styles.clubAttributes}>
+                            <div className={styles.clubImage}>
+                                <img src="/default-avatar.png" />
+                            </div>
+                            <div className={styles.attributes}>
+                                <div className={styles.attributesContainer}>
+                                    <div className={styles.attributesClubName}>Club Name
+                                        <div className={styles.attributesClubPrice}>$45.00</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.itemBorder}></div>
+                        <div className={styles.clubForms}>
+                            <div className={styles.clubFormsText}>
+                                - Registration Form
+                            </div>
+                            <div className={styles.clubFormsText}>
+                                - Health Form
+                            </div>
+                            <div className={styles.clubFormsText} style={{ paddingBottom: "0" }}>
+                                - Registration Form
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+
                 <div className={styles.everythingOrderContainer}>
                     <div className={styles.orderContent}>
                         <div className={styles.feeContainer}>
@@ -106,16 +135,31 @@ export default function Cart() {
                                 Pay Now
                             </div>
                         </Link>
-                        <div className={styles.payNowText}>
+                        {/* <div className={styles.payNowText}>
                             OR
                         </div>
-                        {/* change to forms page */}
                         <Link href="/pages/forms" style={{ textDecoration: "none" }}>
                             <div className={styles.payLaterButton}>
                                 Continue To Forms
                             </div>
+                        </Link> */}
+                    </div>
+
+                    <div className={styles.itemsLabel} style={{ width: "100%", marginLeft: "0", marginRight: "0", marginTop: "5rem"}}>
+                        Forms to Complete
+                    </div>
+                    <div className={styles.formsContainer}>
+                        <Link href="" style={{ color: "#044e8b" }}>
+                            <div className={styles.actionItem}>DECA Sign Up Form</div>
+                        </Link>
+                        <Link href="" style={{ color: "#044e8b" }}>
+                            <div className={styles.actionItem}>Speech and Debate Registration Form</div>
+                        </Link>
+                        <Link href="" style={{ color: "#044e8b" }}>
+                            <div className={styles.actionItem}>Forms</div>
                         </Link>
                     </div>
+
                 </div>
             </div>
         </div>

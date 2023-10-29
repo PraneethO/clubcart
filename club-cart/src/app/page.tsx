@@ -7,16 +7,39 @@ import Typewriter from "typewriter-effect";
 
 import Link from "next/link";
 
-export default function Home() {
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
+export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = () => {
-    setError("Test");
+  const router = useRouter();
+
+  const handleSubmit = async () => {
+    if (!email || !password) {
+      setError("All data fields are required");
+      return;
+    }
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (res!.error) {
+        setError("Invalid Credentials");
+        return;
+      }
+
+      router.replace("pages/shop");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -27,7 +50,6 @@ export default function Home() {
         <Link href="/pages/sign-up" className={styles.link}>
           <button className={styles.navButton}>Join Us</button>
         </Link>
-
       </nav>
       <div className={styles.firstContainer}>
         <div className={styles.loginForm}>
@@ -54,22 +76,18 @@ export default function Home() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-
               type={showPassword ? "text" : "password"}
             />
             <label className={styles.showPasswordText}>
-              
               <input
                 type="checkbox"
                 checked={showPassword}
                 onChange={() => setShowPassword(!showPassword)}
-                style = {{marginTop: "0.5rem"}}
+                style={{ marginTop: "0.5rem" }}
               />
-              
               <span className="checkmark"></span>
               Show Password
             </label>
-            
           </div>
           <button className={styles.inputButton} onClick={handleSubmit}>
             LOGIN
@@ -77,7 +95,7 @@ export default function Home() {
           <a href="/pages/sign-up" className={styles.inputExtra}>
             Don&rsquo;t have an account? Sign Up
           </a>
-          {error ? <div className={styles.errorContainer}>ERROR</div> : ""}
+          {error ? <div className={styles.errorContainer}>{error}</div> : ""}
         </div>
         <div className={styles.rightText}>
           <Typewriter
@@ -94,4 +112,6 @@ export default function Home() {
   );
 }
 
-{/* Your one-stop <br/> shop for all things <br/> clubs. */ }
+{
+  /* Your one-stop <br/> shop for all things <br/> clubs. */
+}

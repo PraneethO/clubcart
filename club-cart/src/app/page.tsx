@@ -48,7 +48,7 @@ export default function Home() {
         <div className={styles.navLogo}>CLUBCART</div>
 
         <Link href="/pages/sign-up" className={styles.link}>
-          <button className={styles.navButton}>Join Us</button>
+          <button className={styles.navButton}>Sign Up</button>
         </Link>
       </nav>
       <div className={styles.firstContainer}>

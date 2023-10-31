@@ -1,43 +1,48 @@
-import dbConnect from "@/lib/connectDB";
-import Student from "@/lib/models/Student";
-import Organization from "@/lib/models/Organization";
+import dbConnect from "@/lib/connectDB"; // Update the import path
+import Student from "@/lib/models/Student"; // Update the import path
+import Club from "@/lib/models/Club"; // Update the import path
 import bcrypt from "bcrypt";
 
 import { AuthOptions } from "next-auth";
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const authOptions: AuthOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
-      credentials: {},
 
+      credentials: {
+        email: { label: "Email", type: "text" },
+        password: { label: "Password", type: "password" },
+      },
       async authorize(credentials: any) {
-        const { email, password } = await credentials;
+        const { email, password } = credentials;
 
         try {
           await dbConnect();
 
           const student = await Student.findOne({ email });
           if (!student) {
-            const organization = await Organization.findOne({ email });
-            if (!organization) {
-              return null;
+            const club = await Club.findOne({ email });
+            if (!club) {
+              return null; // Indicate invalid credentials
             } else {
-              if (await !bcrypt.compare(password, organization.password)) {
-                return null;
+              const passMatch = await bcrypt.compare(password, club.password);
+              if (passMatch) {
+                return club;
               }
-              return organization.email;
             }
           } else {
-            if (await !bcrypt.compare(password, student.password)) {
-              return null;
+            const passMatch = await bcrypt.compare(password, student.password);
+            if (passMatch) {
+              return student;
             }
-            return student.email;
           }
+          return null; // Indicate invalid credentials
         } catch (error) {
-          return null;
+          console.log(error);
+          return null; // Indicate an error occurred
         }
       },
     }),
@@ -46,9 +51,6 @@ const authOptions: AuthOptions = {
     strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
-  pages: {
-    signIn: "/",
-  },
 };
 
 const handler = NextAuth(authOptions);

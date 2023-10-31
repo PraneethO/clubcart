@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   school: { type: String, required: true },
-  grade: { type: Number, required: true },
+  clubs: [{ type: String }],
 });
 
 export default (mongoose.models.Student

@@ -6,6 +6,9 @@ import styles from "./page.module.css";
 import { useState } from "react";
 
 import axios from "axios";
+import { useRouter } from "next/navigation";
+
+import { signIn } from "next-auth/react";
 
 export default function SignUp() {
   const [studentForm, setStudentForm] = useState(true);
@@ -13,15 +16,88 @@ export default function SignUp() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  const [name, setName] = useState("");
   const [school, setSchool] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [sponsorName, setSponsorName] = useState("");
 
-  const handleAdminSubmit = () => {
-    axios
-      .post("http://localhost:3000/api/signUp")
-      .then((response) => console.log(response));
+  const [error, setError] = useState("");
+
+  const router = useRouter();
+
+  const handleAdminSubmit = async () => {
+    if (!name || !school || !email || !password || !sponsorName) {
+      setError("All fields are required");
+      return;
+    }
+
+    const formData = {
+      name,
+      school,
+      email,
+      password,
+      sponsorName,
+      type: 1,
+    };
+
+    await axios
+      .post("http://localhost:3000/api/signUp", formData)
+      .then(async (response) => {
+        // ! Add sign in logic
+        const res = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+
+        router.replace("/pages/admin-dashboard");
+      })
+      .catch((err) => {
+        switch (err.response.status) {
+          case 500:
+            setError("Internal Server Error. Please try again later.");
+          case 401:
+            setError("Duplicate User Exists. Try to log in");
+        }
+      });
+  };
+
+  const handleStudentSubmit = async () => {
+    if (!firstName || !lastName || !email || !password || !school) {
+      setError("All fields are required");
+      return;
+    }
+
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      password,
+      school,
+      type: 0,
+    };
+
+    await axios
+      .post("http://localhost:3000/api/signUp", formData)
+      .then(async (response) => {
+        // ! Add sign in logic
+        const res = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+
+        router.replace("/pages/shop");
+      })
+      .catch((err) => {
+        switch (err.response.status) {
+          case 500:
+            setError("Internal Server Error. Please try again later.");
+          case 401:
+            setError("Duplicate User Exists. Try to log in");
+        }
+      });
   };
 
   return (
@@ -95,11 +171,11 @@ export default function SignUp() {
                 </div>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>School Email</div>
+                <div className={styles.inputDesc}>Personal Email</div>
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter Your School Email"
+                  placeholder="Enter Your Personal Email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -130,13 +206,38 @@ export default function SignUp() {
                   }}
                 ></input>
               </div>
-              <button className={styles.buttonSubmit}>Agree & Join</button>
+              <button
+                className={styles.buttonSubmit}
+                onClick={handleStudentSubmit}
+              >
+                Agree & Join
+              </button>
+
+              <div
+                style={error == "" ? { display: "none" } : { display: "block" }}
+              >
+                {error}
+              </div>
             </div>
           ) : (
             <div className={styles.loginForm}>
               <div className={styles.inputContainer}>
                 <div className={styles.inputDesc} style={{ marginTop: "0" }}>
-                  School
+                  Name of Club
+                </div>
+                <input
+                  className={styles.inputField}
+                  style={{ width: "100%" }}
+                  placeholder="Enter The Name of Your Club (Include the 'Club' part at the end)"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <div className={styles.inputContainer}>
+                <div className={styles.inputDesc} style={{ marginTop: "0" }}>
+                  School Code
                 </div>
                 <input
                   className={styles.inputField}
@@ -173,14 +274,14 @@ export default function SignUp() {
                 ></input>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>Confirm Password</div>
+                <div className={styles.inputDesc}>Sponsor Name</div>
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Confirm Your Password"
-                  value={confirmPassword}
+                  placeholder="Enter your sponsor name (shortened is fine)"
+                  value={sponsorName}
                   onChange={(e) => {
-                    setConfirmPassword(e.target.value);
+                    setSponsorName(e.target.value);
                   }}
                 ></input>
               </div>
@@ -190,6 +291,12 @@ export default function SignUp() {
               >
                 Agree & Join
               </button>
+
+              <div
+                style={error == "" ? { display: "none" } : { display: "block" }}
+              >
+                {error}
+              </div>
             </div>
           )}
         </div>

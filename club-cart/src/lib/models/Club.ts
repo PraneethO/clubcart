@@ -4,9 +4,11 @@ const clubSchema = new mongoose.Schema({
   _id: { type: String, required: true },
   name: { type: String, required: true },
   email: { type: String, required: true },
+  password: { type: String, required: true },
   school: { type: String, required: true },
   list: [{ type: String, required: true }],
   fees: [{ type: String, required: true }],
+  sponsorName: { type: String, required: true },
 });
 
 export default (mongoose.models.Club

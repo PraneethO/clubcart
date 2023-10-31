@@ -13,9 +13,11 @@ export default function Dashboard() {
   const { data: session, status } = useSession();
 
   useEffect(() => {
-    console.log(session);
-    if (status !== "authenticated") {
-      router.push("/");
+    if (status == "unauthenticated") {
+      return router.push("/");
+    }
+    if (session?.user?.name == "club") {
+      return router.push("/");
     }
   }, [status]);
 

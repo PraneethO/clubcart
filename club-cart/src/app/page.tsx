@@ -19,7 +19,11 @@ export default function Home() {
 
   useEffect(() => {
     if (status === "authenticated") {
-      router.replace("/pages/shop");
+      if (session.user?.name === "student") {
+        router.push("/pages/shop");
+      } else if (session.user?.name === "club") {
+        router.push("/pages/admin-dashboard");
+      }
     }
   }, [status]);
 

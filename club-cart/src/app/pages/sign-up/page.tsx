@@ -3,14 +3,28 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 export default function SignUp() {
+  const router = useRouter();
+
+  const { data: session, status } = useSession();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      if (session.user?.name === "student") {
+        router.push("/pages/shop");
+      } else if (session.user?.name === "club") {
+        router.push("/pages/admin-dashboard");
+      }
+    }
+  }, [status]);
+
   const [studentForm, setStudentForm] = useState(true);
 
   const [firstName, setFirstName] = useState("");
@@ -23,8 +37,6 @@ export default function SignUp() {
   const [sponsorName, setSponsorName] = useState("");
 
   const [error, setError] = useState("");
-
-  const router = useRouter();
 
   const handleAdminSubmit = async () => {
     if (!name || !school || !email || !password || !sponsorName) {

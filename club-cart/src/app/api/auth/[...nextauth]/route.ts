@@ -30,13 +30,13 @@ export const authOptions: AuthOptions = {
             } else {
               const passMatch = await bcrypt.compare(password, club.password);
               if (passMatch) {
-                return club;
+                return { email: club.email, name: "club" } as any;
               }
             }
           } else {
             const passMatch = await bcrypt.compare(password, student.password);
             if (passMatch) {
-              return student;
+              return { email: student.email, name: "student" } as any;
             }
           }
           return null; // Indicate invalid credentials
@@ -51,6 +51,11 @@ export const authOptions: AuthOptions = {
     strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async session({ session, user, token }) {
+      return Promise.resolve(session);
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);

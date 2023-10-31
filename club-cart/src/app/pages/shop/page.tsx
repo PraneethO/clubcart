@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import styles from "./page.module.css";
-import MultiSelectDropdown from "./MultiSelectDropdown";
 import { signOut, useSession } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -12,13 +10,14 @@ import { useEffect } from "react";
 export default function Dashboard() {
   const router = useRouter();
 
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
-    if (!session?.user) {
+    console.log(session);
+    if (status !== "authenticated") {
       router.push("/");
     }
-  }, [session]);
+  }, [status]);
 
   return (
     <main className={styles.main}>

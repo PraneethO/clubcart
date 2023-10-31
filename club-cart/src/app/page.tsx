@@ -21,7 +21,7 @@ export default function Home() {
     if (status === "authenticated") {
       router.replace("/pages/shop");
     }
-  }, [session]);
+  }, [status]);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

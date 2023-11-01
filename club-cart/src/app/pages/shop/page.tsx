@@ -252,7 +252,13 @@ export default function Dashboard() {
                       </span>
                     </div>
                     <button className={styles.clubExtra}>
+<<<<<<< HEAD
+                      <div className={styles.addToCartText}>
+                        More Info / Register
+                      </div>
+=======
                       <div className={styles.addToCartText}>Add to Cart</div>
+>>>>>>> 59c3219609f676f7f12e09e921c12dd0803e1542
                     </button>
                   </Link>
                 );

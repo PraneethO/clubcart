@@ -49,6 +49,24 @@ export default function Dashboard() {
       });
   }, []);
 
+  const handleAddCart = async () => {
+    if (!session?.user?.email) {
+      return;
+    }
+
+    axios
+      .post("http://localhost:3000/api/addStudentToClub", {
+        email: session?.user?.email,
+        id,
+      })
+      .then((response) => {
+        alert("You have been added to the club!");
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.nav}>
@@ -142,7 +160,13 @@ export default function Dashboard() {
           <div className={styles.clubDescription}>{description}</div>
           <div className={styles.clubDescription}></div>
           <button className={styles.clubExtra}>
-            <div className={styles.addToCartText}>Add to Cart</div>
+            <div
+              className={styles.addToCartText}
+              onClick={handleAddCart}
+              style={{ cursor: "pointer" }}
+            >
+              Register / Add to Cart
+            </div>
           </button>
         </div>
       </div>

@@ -8,6 +8,8 @@ const studentSchema = new mongoose.Schema({
   password: { type: String, required: true },
   school: { type: String, required: true },
   clubs: [{ type: String, default: [] }],
+
+  cart: [{ type: String, default: [] }],
 });
 
 export default (mongoose.models.Student

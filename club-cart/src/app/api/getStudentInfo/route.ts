@@ -1,4 +1,5 @@
 import dbConnect from "@/lib/connectDB";
+import Club from "@/lib/models/Club";
 import Student from "@/lib/models/Student";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -7,9 +8,7 @@ export async function POST(req: NextRequest) {
 
   await dbConnect();
 
-  const student = Student.findOne({ email }, { clubs: 1 });
-
-  console.log(student.clubs);
+  const student = await Student.findOne({ email });
 
   return NextResponse.json(
     { message: "Success", body: student.clubs },

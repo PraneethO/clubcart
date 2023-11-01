@@ -1,15 +1,19 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+import axios from "axios";
+
 export default function Cart() {
   const router = useRouter();
 
   const { data: session, status } = useSession();
+
+  const [clubList, setClubList] = useState<any>([]);
 
   useEffect(() => {
     if (status == "unauthenticated") {
@@ -18,7 +22,27 @@ export default function Cart() {
     if (session?.user?.name == "club") {
       return router.push("/");
     }
-  }, [status]);
+
+    while (!session?.user?.email) {
+      return;
+    }
+
+    axios
+      .post("http://localhost:3000/api/getCartInfo", {
+        email: session?.user?.email,
+      })
+      .then((response) => setClubList(response.data.body))
+      .catch((err) => alert(err));
+  }, [status, session]);
+
+  const calcTotal = () => {
+    let counter = 0;
+    for (let i = 0; i < clubList.length; i++) {
+      counter += clubList[i].fees;
+    }
+
+    return counter;
+  };
 
   return (
     <main className={styles.main}>
@@ -106,91 +130,61 @@ export default function Cart() {
 
         <div className={styles.cartContentContainer}>
           <div className={styles.itemsContent}>
-            <div className={styles.clubItem}>
-              <div className={styles.clubAttributes}>
-                <div className={styles.clubImage}>
-                  <img src="/default-avatar.png" />
-                </div>
-                <div className={styles.attributes}>
-                  <div className={styles.attributesContainer}>
-                    <div className={styles.attributesClubName}>
-                      Club Name
-                      <div className={styles.attributesClubPrice}>$45.00</div>
+            {Array.from({ length: clubList.length }, (_, index) => (
+              <div key={index} className={styles.clubItem}>
+                <div className={styles.clubAttributes}>
+                  <div className={styles.clubImage}>
+                    <img src={clubList[index].picture} />
+                  </div>
+                  <div className={styles.attributes}>
+                    <div className={styles.attributesContainer}>
+                      <div className={styles.attributesClubName}>
+                        {clubList[index].name}
+                        <div className={styles.attributesClubPrice}>
+                          {"$" + clubList[index].fees + ".00"}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.itemBorder}></div>
-              <div className={styles.clubForms}>
-                <div className={styles.clubFormsText}>- Registration Form</div>
-                <div className={styles.clubFormsText}>- Health Form</div>
-                <div
-                  className={styles.clubFormsText}
-                  style={{ paddingBottom: "0" }}
-                >
-                  - Registration Form
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.clubItem}>
-              <div className={styles.clubAttributes}>
-                <div className={styles.clubImage}>
-                  <img src="/default-avatar.png" />
-                </div>
-                <div className={styles.attributes}>
-                  <div className={styles.attributesContainer}>
-                    <div className={styles.attributesClubName}>
-                      Club Name
-                      <div className={styles.attributesClubPrice}>$45.00</div>
-                    </div>
+                <div className={styles.itemBorder}></div>
+                <div className={styles.clubForms}>
+                  <div className={styles.clubFormsText}>
+                    - Registration Form
+                  </div>
+                  <div className={styles.clubFormsText}>- Health Form</div>
+                  <div
+                    className={styles.clubFormsText}
+                    style={{ paddingBottom: "0" }}
+                  >
+                    - Registration Form
                   </div>
                 </div>
               </div>
-              <div className={styles.itemBorder}></div>
-              <div className={styles.clubForms}>
-                <div className={styles.clubFormsText}>- Registration Form</div>
-                <div className={styles.clubFormsText}>- Health Form</div>
-                <div
-                  className={styles.clubFormsText}
-                  style={{ paddingBottom: "0" }}
-                >
-                  - Registration Form
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className={styles.everythingOrderContainer}>
             <div className={styles.orderContent}>
-              <div className={styles.feeContainer}>
-                <div className={styles.feeText}>Speech and Debate</div>
-                <div className={styles.feePrice}>$90.50</div>
-              </div>
-
-              <div className={styles.feeContainer}>
-                <div className={styles.feeText}>Processing Fee</div>
-                <div className={styles.feePrice}>$4.95</div>
-              </div>
+              {Array.from({ length: clubList.length }, (_, index) => (
+                <div key={index} className={styles.feeContainer}>
+                  <div className={styles.feeText}>{clubList[index].name}</div>
+                  <div className={styles.feePrice}>
+                    {"$" + clubList[index].fees + ".00"}
+                  </div>
+                </div>
+              ))}
               <div className={styles.orderBorder}></div>
 
               <div className={styles.feeContainer}>
                 <div className={styles.feeText}>Total</div>
-                <div className={styles.feePrice}>$94.95</div>
+                <div className={styles.feePrice}>{}</div>
               </div>
             </div>
             <div className={styles.payNowButtonContainer}>
               <Link href="/pages/payment" style={{ textDecoration: "none" }}>
                 <div className={styles.payNowButton}>Pay Now</div>
               </Link>
-              {/* <div className={styles.payNowText}>
-                            OR
-                        </div>
-                        <Link href="/pages/forms" style={{ textDecoration: "none" }}>
-                            <div className={styles.payLaterButton}>
-                                Continue To Forms
-                            </div>
-                        </Link> */}
             </div>
 
             <div

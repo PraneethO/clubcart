@@ -24,7 +24,7 @@ export default function Dashboard() {
   const [email, setEmail] = useState("");
   const [meetingDay, setMeetingDay] = useState("");
 
-  const [clubsSignedUp, setClubsSignedUp] = useState([]);
+  const [clubsSignedUp, setClubsSignedUp] = useState([""]);
 
   useEffect(() => {
     if (status == "unauthenticated") {
@@ -37,7 +37,16 @@ export default function Dashboard() {
     if (!session?.user?.email) {
       return;
     }
-  }, [status]);
+
+    axios
+      .post("http://localhost:3000/api/getStudentInfo", {
+        email: session.user.email,
+      })
+      .then((response) => {
+        setClubsSignedUp(response.data.body);
+      })
+      .catch((err) => alert(err));
+  }, [status, session]);
 
   useEffect(() => {
     axios
@@ -67,6 +76,7 @@ export default function Dashboard() {
       })
       .then((response) => {
         alert("You have been added to the club!");
+        router.push("/pages/cart");
       })
       .catch((err) => {
         alert(err);
@@ -159,24 +169,60 @@ export default function Dashboard() {
           <div className={styles.clubName}>{name}</div>
           <div className={styles.cost}>{"$" + dues + ".00"}</div>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <div className={styles.clubDescriptionTitle} style={{ border: "none", fontSize: "1rem", width: "fit-content" }}>Sponsor Email: </div>
-            <div className={styles.clubDescription} style={{ flex: "0", width: "fit-content", marginTop: "auto", marginBottom: "auto" }}>{email}</div>
+            <div
+              className={styles.clubDescriptionTitle}
+              style={{ border: "none", fontSize: "1rem", width: "fit-content" }}
+            >
+              Sponsor Email:{" "}
+            </div>
+            <div
+              className={styles.clubDescription}
+              style={{
+                flex: "0",
+                width: "fit-content",
+                marginTop: "auto",
+                marginBottom: "auto",
+              }}
+            >
+              {email}
+            </div>
           </div>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <div className={styles.clubDescriptionTitle} style={{ border: "none", fontSize: "1rem", width: "fit-content" }}>Meeting Day(s): </div>
-            <div className={styles.clubDescription} style={{ flex: "0", width: "fit-content", marginTop: "auto", marginBottom: "auto" }}>{meetingDay}</div>
+            <div
+              className={styles.clubDescriptionTitle}
+              style={{ border: "none", fontSize: "1rem", width: "fit-content" }}
+            >
+              Meeting Day(s):{" "}
+            </div>
+            <div
+              className={styles.clubDescription}
+              style={{
+                flex: "0",
+                width: "fit-content",
+                marginTop: "auto",
+                marginBottom: "auto",
+              }}
+            >
+              {meetingDay}
+            </div>
           </div>
           <div className={styles.clubDescriptionTitle}>Description</div>
           <div className={styles.clubDescription}>{description}</div>
           <div className={styles.clubDescription}></div>
           <button className={styles.clubExtra}>
-            <div
-              className={styles.addToCartText}
-              onClick={handleAddCart}
-              style={{ cursor: "pointer" }}
-            >
-              Add to Cart
-            </div>
+            {clubsSignedUp.includes(id!) ? (
+              <div className={styles.addToCartText}>
+                You're Already Signed Up!
+              </div>
+            ) : (
+              <div
+                className={styles.addToCartText}
+                onClick={handleAddCart}
+                style={{ cursor: "pointer" }}
+              >
+                Add to Cart
+              </div>
+            )}
           </button>
         </div>
       </div>

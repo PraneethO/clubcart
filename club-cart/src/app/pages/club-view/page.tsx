@@ -163,7 +163,7 @@ export default function Dashboard() {
 
       <div className={styles.contentContainer}>
         <div className={styles.imageContainer}>
-          <img src={picture} alt={name} style={{ height: "100%" }} />
+          <img src={picture} alt={name} style={{ maxHeight: "fit-content", maxWidth: "100%", marginTop: "auto", marginBottom: "auto"}} />
         </div>
         <div className={styles.clubContentContainer}>
           <div className={styles.clubName}>{name}</div>
@@ -190,7 +190,7 @@ export default function Dashboard() {
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div
               className={styles.clubDescriptionTitle}
-              style={{ border: "none", fontSize: "1rem", width: "fit-content" }}
+              style={{ border: "none", fontSize: "1rem", width: "fit-content"}}
             >
               Meeting Day(s):{" "}
             </div>
@@ -207,7 +207,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className={styles.clubDescriptionTitle}>Description</div>
-          <div className={styles.clubDescription}>{description}</div>
+          <div className={styles.clubDescription} style={{flexDirection: "row"}}>{description}</div>
           <div className={styles.clubDescription}></div>
           <button className={styles.clubExtra}>
             {clubsSignedUp.includes(id!) ? (

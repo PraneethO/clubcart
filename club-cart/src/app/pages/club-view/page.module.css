@@ -82,6 +82,8 @@
 }
 
 .imageContainer {
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
     width: 70%;
     height: 100%;

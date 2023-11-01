@@ -29,33 +29,17 @@ export default function Cart() {
         >
           <div className={styles.navLogo}>CLUBCART</div>
         </Link>
-        <button
-          onClick={() => {
-            signOut({ redirect: true, callbackUrl: "http://localhost:3000" });
-          }}
-          className={styles.link}
-          style={{
-            marginLeft: "auto",
-            height: "250%",
-            fontSize: "1.5rem",
-            backgroundColor: "red",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Log Out
-        </button>
         <Link
           href="/pages/shop"
           className={styles.link}
-          style={{ marginLeft: "1rem" }}
+          style={{ marginLeft: "auto" }}
         >
           <button className={styles.navButton}>
             <img
               src="/home-icon.png"
               width={35}
               height={35}
-              style={{ marginLeft: "auto", marginRight: "auto" }}
+              style={{ marginLeft: "auto", marginRight: "0" }}
             />
             Shop
           </button>
@@ -83,7 +67,7 @@ export default function Cart() {
         <Link
           href="/pages/user-profile"
           className={styles.link}
-          style={{ marginLeft: "1rem" }}
+          style={{ marginLeft: "1rem", marginRight: "1rem" }}
         >
           <button className={styles.navButton}>
             <img
@@ -95,6 +79,23 @@ export default function Cart() {
             profile
           </button>
         </Link>
+
+        <div className={styles.link}>
+          <button
+            onClick={() => {
+              signOut({ redirect: true, callbackUrl: "http://localhost:3000" });
+            }}
+            className={styles.navButton}
+          >
+            <img
+              src="/logout-icon.png"
+              width={35}
+              height={35}
+              style={{ transform: "translateX(-4px)" }}
+            />
+            LogOut
+          </button>
+        </div>
       </div>
 
       <div className={styles.cartContainer}>

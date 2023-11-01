@@ -183,11 +183,11 @@ export default function SignUp() {
                 </div>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>Personal Email</div>
+                <div className={styles.inputDesc}>School Email</div>
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter Your Personal Email"
+                  placeholder="Enter Your School Email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -248,7 +248,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter The Name of Your Club (Include the 'Club' part at the end)"
+                  placeholder="Enter The Name of Your Club (Include 'Club' if Applicable)"
                   value={name}
                   onChange={(e) => {
                     setName(e.target.value);
@@ -267,7 +267,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter Your school code"
+                  placeholder="Enter Your School Code"
                   value={school}
                   onChange={(e) => {
                     setSchool(e.target.value);
@@ -275,11 +275,11 @@ export default function SignUp() {
                 ></input>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>Email</div>
+                <div className={styles.inputDesc}>School Email</div>
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter Your Email"
+                  placeholder="Enter Your School Email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);

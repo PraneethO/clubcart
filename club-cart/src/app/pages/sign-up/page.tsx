@@ -207,7 +207,14 @@ export default function SignUp() {
                 ></input>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>School Code</div>
+                <div className={styles.inputDesc}>
+                  School Code
+                  <span style={{ fontSize: "1.3rem", marginLeft: "15%" }}>
+                    <a href="http://localhost:3000/pages/school-codes">
+                      More Information About School Codes
+                    </a>
+                  </span>
+                </div>
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
@@ -250,11 +257,16 @@ export default function SignUp() {
               <div className={styles.inputContainer}>
                 <div className={styles.inputDesc} style={{ marginTop: "0" }}>
                   School Code
+                  <span style={{ fontSize: "1.3rem", marginLeft: "15%" }}>
+                    <a href="http://localhost:3000/pages/school-codes">
+                      More Information About School Codes
+                    </a>
+                  </span>
                 </div>
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter Your school"
+                  placeholder="Enter Your school code"
                   value={school}
                   onChange={(e) => {
                     setSchool(e.target.value);

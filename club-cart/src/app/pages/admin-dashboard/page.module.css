@@ -376,6 +376,7 @@
 }
 
 .bottomPart {
+  margin-top: 3rem;
   width: 96%;
 
   margin-left: 2%;
@@ -388,4 +389,21 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 
   transform: translateY(-75%);
+}
+
+.creditCardSubmit {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  padding: 1rem;
+  background-color: #044e8b;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-family: bebas-neue-pro, sans-serif;
 }

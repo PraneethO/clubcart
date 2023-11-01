@@ -152,7 +152,7 @@ export default function Cart() {
                   <div className={styles.clubFormsText}>
                     - Registration Form
                   </div>
-                  <div className={styles.clubFormsText}>- Health Form</div>
+                  {/* <div className={styles.clubFormsText}>- Health Form</div> */}
                   <div
                     className={styles.clubFormsText}
                     style={{ paddingBottom: "0" }}

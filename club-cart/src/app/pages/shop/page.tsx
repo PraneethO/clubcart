@@ -15,6 +15,10 @@ export default function Dashboard() {
   const { data: session, status } = useSession();
 
   const [clubList, setClubList] = useState([]);
+  const [freeCheckbox, setFreeCheckbox] = useState(false);
+  const [oneCheckbox, setOneCheckbox] = useState(false);
+  const [twentyCheckbox, setTwentyCheckbox] = useState(false);
+  const [fiftyCheckbox, setFiftyCheckbox] = useState(false);
 
   useEffect(() => {
     if (status == "unauthenticated") {
@@ -31,6 +35,8 @@ export default function Dashboard() {
     axios
       .post("http://localhost:3000/api/getClubsInSchool", {
         schoolCode: session?.user?.image,
+        min: 0,
+        max: 10000,
       })
       .then((response) => {
         setClubList(response.data.body);
@@ -39,6 +45,22 @@ export default function Dashboard() {
         alert(err);
       });
   }, [status]);
+
+  const changeFilter = async (min: Number, max: Number) => {
+    await axios
+      .post("http://localhost:3000/api/getClubsInSchool", {
+        schoolCode: session?.user?.image,
+        min: min,
+        max: max,
+      })
+      .then((response) => {
+        console.log(response);
+        setClubList(response.data.body);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
 
   return (
     <main className={styles.main}>
@@ -198,19 +220,63 @@ export default function Dashboard() {
               Amount of Dues
             </div>
             <div className={styles.filterInputandDescriptionContainer}>
-              <input className={styles.filterInput} type="checkbox"></input>
+              <input
+                className={styles.filterInput}
+                type="checkbox"
+                value={freeCheckbox.toString()}
+                onClick={() => {
+                  setFreeCheckbox(!freeCheckbox);
+                  if (freeCheckbox == false) {
+                    changeFilter(0, 10000);
+                  }
+                  changeFilter(0, 1);
+                }}
+              ></input>
               <div className={styles.filterDescription}>Free</div>
             </div>
             <div className={styles.filterInputandDescriptionContainer}>
-              <input className={styles.filterInput} type="checkbox"></input>
+              <input
+                className={styles.filterInput}
+                type="checkbox"
+                value={oneCheckbox.toString()}
+                onClick={() => {
+                  setOneCheckbox(!oneCheckbox);
+                  if (oneCheckbox == false) {
+                    changeFilter(0, 10000);
+                  }
+                  changeFilter(1, 25);
+                }}
+              ></input>
               <div className={styles.filterDescription}>$1 - $25</div>
             </div>
             <div className={styles.filterInputandDescriptionContainer}>
-              <input className={styles.filterInput} type="checkbox"></input>
+              <input
+                className={styles.filterInput}
+                type="checkbox"
+                value={twentyCheckbox.toString()}
+                onClick={() => {
+                  setTwentyCheckbox(!twentyCheckbox);
+                  if (twentyCheckbox == false) {
+                    changeFilter(0, 10000);
+                  }
+                  changeFilter(25, 50);
+                }}
+              ></input>
               <div className={styles.filterDescription}>$25 - $50</div>
             </div>
             <div className={styles.filterInputandDescriptionContainer}>
-              <input className={styles.filterInput} type="checkbox"></input>
+              <input
+                className={styles.filterInput}
+                type="checkbox"
+                value={fiftyCheckbox.toString()}
+                onClick={() => {
+                  setFiftyCheckbox(!fiftyCheckbox);
+                  if (fiftyCheckbox == false) {
+                    changeFilter(0, 10000);
+                  }
+                  changeFilter(50, 500);
+                }}
+              ></input>
               <div className={styles.filterDescription}>$50 - $500</div>
             </div>
           </div>

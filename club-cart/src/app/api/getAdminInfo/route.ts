@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
         description: club.description,
         forms: club.forms.length,
         formList: formList,
+        picture: club.picture,
       },
     },
     { status: 200 }

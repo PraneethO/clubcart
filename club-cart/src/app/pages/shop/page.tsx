@@ -232,8 +232,24 @@ export default function Dashboard() {
                       />
                     </div>
                     <div className={styles.clubName}>{club.name}</div>
+                    <div></div>
                     <div className={styles.cost}>
-                      {club.fees ? "$" + club.fees + ".00" : "Free"}
+                      Cost:{" "}
+                      <span style={{ fontSize: "1rem" }}>
+                        {club.fees ? "$" + club.fees + ".00" : "Free"}
+                      </span>
+                    </div>
+                    <div className={styles.cost}>
+                      Sponsor:{" "}
+                      <span style={{ fontSize: "1rem" }}>
+                        {club.sponsorName}
+                      </span>
+                    </div>
+                    <div className={styles.cost}>
+                      Meeting Day:{" "}
+                      <span style={{ fontSize: "1rem" }}>
+                        {club.meetingDay}
+                      </span>
                     </div>
                     <button className={styles.clubExtra}>
                       <div className={styles.addToCartText}>Add to Cart</div>

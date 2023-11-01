@@ -5,12 +5,16 @@ import styles from "./page.module.css";
 import { signOut, useSession } from "next-auth/react";
 
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import axios from "axios";
 
 export default function Dashboard() {
   const router = useRouter();
 
   const { data: session, status } = useSession();
+
+  const [clubList, setClubList] = useState([]);
 
   useEffect(() => {
     if (status == "unauthenticated") {
@@ -19,6 +23,21 @@ export default function Dashboard() {
     if (session?.user?.name == "club") {
       return router.push("/");
     }
+
+    while (!session?.user?.image) {
+      return;
+    }
+
+    axios
+      .post("http://localhost:3000/api/getClubsInSchool", {
+        schoolCode: session?.user?.image,
+      })
+      .then((response) => {
+        setClubList(response.data.body);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }, [status]);
 
   return (
@@ -68,7 +87,7 @@ export default function Dashboard() {
         <Link
           href="/pages/user-profile"
           className={styles.link}
-          style={{ marginLeft: "1rem", marginRight: "1rem"}}
+          style={{ marginLeft: "1rem", marginRight: "1rem" }}
         >
           <button className={styles.navButton}>
             <img
@@ -198,16 +217,30 @@ export default function Dashboard() {
 
           <div className={styles.dashContent} style={{ minHeight: "35rem" }}>
             <div className={styles.rowContainer}>
-              <Link href="/pages/club-view" className={styles.clubContainer}>
-                <div className={styles.clubImagesContainer}>
-                  <img src="/default-avatar.png" />
-                </div>
-                <div className={styles.clubName}>PlaceHolder</div>
-                <div className={styles.cost}>$35.00</div>
-                <button className={styles.clubExtra}>
-                  <div className={styles.addToCartText}>Add to Cart</div>
-                </button>
-              </Link>
+              {clubList.map((club: any, key) => {
+                return (
+                  <Link
+                    href={`/pages/club-view/${club._id}`}
+                    className={styles.clubContainer}
+                    key={key}
+                  >
+                    <div className={styles.clubImagesContainer}>
+                      <img
+                        src={
+                          club.picture ? club.picture : "/default-avatar.png"
+                        }
+                      />
+                    </div>
+                    <div className={styles.clubName}>{club.name}</div>
+                    <div className={styles.cost}>
+                      {club.fees ? "$" + club.fees + ".00" : "Free"}
+                    </div>
+                    <button className={styles.clubExtra}>
+                      <div className={styles.addToCartText}>Add to Cart</div>
+                    </button>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

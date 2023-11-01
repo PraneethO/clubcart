@@ -30,13 +30,21 @@ export const authOptions: AuthOptions = {
             } else {
               const passMatch = await bcrypt.compare(password, club.password);
               if (passMatch) {
-                return { email: club.email, name: "club" } as any;
+                return {
+                  email: club.email,
+                  name: "club",
+                  image: club.school,
+                } as any;
               }
             }
           } else {
             const passMatch = await bcrypt.compare(password, student.password);
             if (passMatch) {
-              return { email: student.email, name: "student" } as any;
+              return {
+                email: student.email,
+                name: "student",
+                image: student.school,
+              } as any;
             }
           }
           return null; // Indicate invalid credentials

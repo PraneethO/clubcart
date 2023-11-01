@@ -152,10 +152,10 @@ export default function Dashboard() {
         <div className={styles.clubContentContainer}>
           <div className={styles.clubName}>{name}</div>
           <div className={styles.cost}>{"$" + dues + ".00"}</div>
-          <div className={styles.clubDescriptionTitle}>Email</div>
-          <div className={styles.clubDescription}>{email}</div>
+          <div className={styles.clubDescriptionTitle}>Sponsor Email</div>
+          <div className={styles.clubDescription} style={{ flex: "0" }}>{email}</div>
           <div className={styles.clubDescriptionTitle}>Meeting Day</div>
-          <div className={styles.clubDescription}>{meetingDay}</div>
+          <div className={styles.clubDescription} style={{ flex: "0" }}>{meetingDay}</div>
           <div className={styles.clubDescriptionTitle}>Description</div>
           <div className={styles.clubDescription}>{description}</div>
           <div className={styles.clubDescription}></div>

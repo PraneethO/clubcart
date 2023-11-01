@@ -199,7 +199,6 @@ export default function Dashboard() {
           <div className={styles.dashContent} style={{ minHeight: "35rem" }}>
             <div className={styles.rowContainer}>
               <Link href="/pages/club-view" className={styles.clubContainer}>
-                {/* <div className={styles.clubContainer}> */}
                 <div className={styles.clubImagesContainer}>
                   <img src="/default-avatar.png" />
                 </div>
@@ -208,11 +207,7 @@ export default function Dashboard() {
                 <button className={styles.clubExtra}>
                   <div className={styles.addToCartText}>Add to Cart</div>
                 </button>
-                {/* </div> */}
               </Link>
-              {/* <div className={styles.clubContainer}>hi</div>
-                        <div className={styles.clubContainer}>hi</div>
-                        <div className={styles.clubContainer} style={{ marginRight: "0" }}>hi</div> */}
             </div>
           </div>
         </div>

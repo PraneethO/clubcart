@@ -42,7 +42,20 @@ export default function SchoolCodes() {
         </Link>
       </nav>
       <div className={styles.mainContainer}>
-        <div className={styles.titleText}>Use this form to create a school code. If you do not see your school, please request a code.</div>
+      <div className={styles.titleText} style={{ marginTop: "3rem" }}>Existing schools and codes:</div>
+        <div className={styles.schoolListContainer}>
+          <div className={styles.schoolInfo}>
+            <div className={styles.label1}>School Name:</div>
+            <div className={styles.label1}>School Code:</div>
+          </div>
+          {schoolList.map((school, index) => (
+            <div key={index} className={styles.schoolInfo}>
+              <div className={styles.label2}>{school.name}</div>
+              <div className={styles.label2}>{school.code}</div>
+            </div>
+          ))}
+        </div>
+        <div className={styles.titleText} style={{marginTop: "10rem"}}>Use this form to create a school code. If you do not see your school, please request a code.</div>
         <div className={styles.bigBox}>
           <div className={styles.threeWay}>
             <div className={styles.inputContainer}>
@@ -69,19 +82,7 @@ export default function SchoolCodes() {
             </button>
           </div>
         </div>
-        <div className={styles.titleText} style={{ marginTop: "10rem" }}>Existing schools and codes:</div>
-        <div className={styles.schoolListContainer}>
-          <div className={styles.schoolInfo}>
-            <div className={styles.label1}>School Name:</div>
-            <div className={styles.label1}>School Code:</div>
-          </div>
-          {schoolList.map((school, index) => (
-            <div key={index} className={styles.schoolInfo}>
-              <div className={styles.label2}>{school.name}</div>
-              <div className={styles.label2}>{school.code}</div>
-            </div>
-          ))}
-        </div>
+        
 
       </div>
     </main>

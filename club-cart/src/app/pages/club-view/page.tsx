@@ -165,7 +165,7 @@ export default function Dashboard() {
               onClick={handleAddCart}
               style={{ cursor: "pointer" }}
             >
-              Register / Add to Cart
+              Add to Cart
             </div>
           </button>
         </div>

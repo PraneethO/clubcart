@@ -7,10 +7,12 @@ export async function POST(req: NextRequest) {
 
   await dbConnect();
 
-  const student = await Student.find(
+  const student = await Student.findOne(
     { email },
     { firstName: 1, lastName: 1, email: 1, school: 1 }
   );
+
+  console.log(student);
 
   return NextResponse.json(
     { message: "Success", body: student },

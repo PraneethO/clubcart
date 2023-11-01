@@ -143,16 +143,15 @@ export default function UserProfile() {
           </div>
           <div className={styles.right}>
             <div className={styles.nameContainer}>
-              <div className={styles.bigName}>Neil Porwal</div>
+              <div className={styles.bigName}>{firstName + " " + lastName}</div>
               <div className={styles.schoolName}>
-                North Allgheny Senior High School
+                {"North Allegheny School District"}
               </div>
             </div>
             <div className={styles.contactInfoContainer}>
-              <div className={styles.contactInfo}>
-                Email: nporwal2@nastudents.org
-              </div>
-              <div className={styles.contactInfo}>Phone: (206) 486-4672</div>
+              <div className={styles.contactInfo} style={{ fontSize: "2rem" }}>
+                Email: {email}
+              </div>{" "}
             </div>
             <div className={styles.roleText}>Role(s): Student</div>
           </div>
@@ -176,7 +175,11 @@ export default function UserProfile() {
               <div className={styles.descriptionContainer}>
                 <div className={styles.description}>School</div>
               </div>
-              <input className={styles.infoInput} />
+              <input
+                className={styles.infoInput}
+                value={school}
+                onChange={(e) => setSchool(e.target.value)}
+              />
             </div>
           </div>
         </div>
@@ -188,19 +191,31 @@ export default function UserProfile() {
               <div className={styles.descriptionContainer}>
                 <div className={styles.description}>First Name</div>
               </div>
-              <input className={styles.infoInput} />
+              <input
+                className={styles.infoInput}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </div>
             <div className={styles.infoRow}>
               <div className={styles.descriptionContainer}>
                 <div className={styles.description}>Last Name</div>
               </div>
-              <input className={styles.infoInput} />
+              <input
+                className={styles.infoInput}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
             </div>
             <div className={styles.infoRow}>
               <div className={styles.descriptionContainer}>
                 <div className={styles.description}>Email</div>
               </div>
-              <input className={styles.infoInput} />
+              <input
+                className={styles.infoInput}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className={styles.infoRow}>
               <div className={styles.descriptionContainer}>

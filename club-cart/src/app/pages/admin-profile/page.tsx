@@ -15,7 +15,7 @@ export default function AdminProfile() {
     if (status == "unauthenticated") {
       return router.push("/");
     }
-    if (session?.user?.name == "club") {
+    if (session?.user?.name == "student") {
       return router.push("/");
     }
   }, [status]);

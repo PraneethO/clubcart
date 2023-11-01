@@ -202,12 +202,12 @@ export default function Cart() {
               <Link href="" style={{ color: "#044e8b" }}>
                 <div className={styles.actionItem}>General Health Form</div>
               </Link>
-              <Link href="" style={{ color: "#044e8b" }}>
+              <Link href="https://forms.gle/zBeh7K4J4oVnakyCA" target="_blank" rel="noopener noreferrer" style={{ color: "#044e8b" }}>
                 <div className={styles.actionItem}>
                 AI Club Sign Up Form
                 </div>
               </Link>
-              <Link href="" style={{ color: "#044e8b" }}>
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSe0cnlybHtj5yzZxES1QRV6FsZGsSeZuhHwpsOKhQ6dLbBfrA/viewform" target="_blank" rel="noopener noreferrer" style={{ color: "#044e8b" }}>
                 <div className={styles.actionItem}>Speech and Debate Registration Form</div>
               </Link>
             </div>

@@ -1,15 +1,32 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function UserProfile() {
   const router = useRouter();
 
   const { data: session, status } = useSession();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [state, setState] = useState("");
+  const [county, setCounty] = useState("");
+  const [school, setSchool] = useState("");
+  const [number, setNumber] = useState(0);
+  const [grade, setGrade] = useState(0);
+  const [studentCode, setStudentCode] = useState(0);
+  const [firstAddress, setFirstAddress] = useState("");
+  const [secondAddress, setSecondAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [zip, setZip] = useState(0);
+
+  const [picture, setPicture] = useState("");
 
   useEffect(() => {
     if (status == "unauthenticated") {
@@ -18,6 +35,22 @@ export default function UserProfile() {
     if (session?.user?.name == "club") {
       return router.push("/");
     }
+
+    if (!session?.user?.email) {
+      return;
+    }
+
+    axios
+      .post("http://localhost:3000/api/getAllStudentInfo", {
+        email: session?.user?.email,
+      })
+      .then((response) => {
+        setFirstName(response.data.body.firstName);
+        setLastName(response.data.body.lastName);
+        setEmail(response.data.body.email);
+        setSchool(response.data.body.school);
+      })
+      .catch((err) => alert(err));
   }, [status]);
 
   return (

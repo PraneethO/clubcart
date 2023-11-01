@@ -153,12 +153,12 @@ export default function Cart() {
                     - Registration Form
                   </div>
                   {/* <div className={styles.clubFormsText}>- Health Form</div> */}
-                  <div
+                  {/* <div
                     className={styles.clubFormsText}
                     style={{ paddingBottom: "0" }}
                   >
                     - Registration Form
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -178,7 +178,7 @@ export default function Cart() {
 
               <div className={styles.feeContainer}>
                 <div className={styles.feeText}>Total</div>
-                <div className={styles.feePrice}>{}</div>
+                <div className={styles.feePrice}>{"$" + calcTotal() + ".00"}</div>
               </div>
             </div>
             <div className={styles.payNowButtonContainer}>
@@ -200,15 +200,15 @@ export default function Cart() {
             </div>
             <div className={styles.formsContainer}>
               <Link href="" style={{ color: "#044e8b" }}>
-                <div className={styles.actionItem}>DECA Sign Up Form</div>
+                <div className={styles.actionItem}>General Health Form</div>
               </Link>
               <Link href="" style={{ color: "#044e8b" }}>
                 <div className={styles.actionItem}>
-                  Speech and Debate Registration Form
+                AI Club Sign Up Form
                 </div>
               </Link>
               <Link href="" style={{ color: "#044e8b" }}>
-                <div className={styles.actionItem}>Forms</div>
+                <div className={styles.actionItem}>Speech and Debate Registration Form</div>
               </Link>
             </div>
           </div>

@@ -69,7 +69,7 @@ export default function SchoolCodes() {
             </button>
           </div>
         </div>
-        <div className={styles.titleText} style={{ marginTop: "5rem" }}>Existing schools and codes:</div>
+        <div className={styles.titleText} style={{ marginTop: "10rem" }}>Existing schools and codes:</div>
         <div className={styles.schoolListContainer}>
           <div className={styles.schoolInfo}>
             <div className={styles.label1}>School Name:</div>

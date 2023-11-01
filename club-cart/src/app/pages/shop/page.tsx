@@ -226,7 +226,7 @@ export default function Dashboard() {
                 value={freeCheckbox.toString()}
                 onClick={() => {
                   setFreeCheckbox(!freeCheckbox);
-                  if (freeCheckbox == false) {
+                  if (freeCheckbox == true) {
                     changeFilter(0, 10000);
                   }
                   changeFilter(0, 1);
@@ -241,7 +241,7 @@ export default function Dashboard() {
                 value={oneCheckbox.toString()}
                 onClick={() => {
                   setOneCheckbox(!oneCheckbox);
-                  if (oneCheckbox == false) {
+                  if (oneCheckbox == true) {
                     changeFilter(0, 10000);
                   }
                   changeFilter(1, 25);
@@ -256,7 +256,7 @@ export default function Dashboard() {
                 value={twentyCheckbox.toString()}
                 onClick={() => {
                   setTwentyCheckbox(!twentyCheckbox);
-                  if (twentyCheckbox == false) {
+                  if (twentyCheckbox == true) {
                     changeFilter(0, 10000);
                   }
                   changeFilter(25, 50);
@@ -271,7 +271,7 @@ export default function Dashboard() {
                 value={fiftyCheckbox.toString()}
                 onClick={() => {
                   setFiftyCheckbox(!fiftyCheckbox);
-                  if (fiftyCheckbox == false) {
+                  if (fiftyCheckbox == true) {
                     changeFilter(0, 10000);
                   }
                   changeFilter(50, 500);

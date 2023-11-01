@@ -24,12 +24,18 @@ export default function Dashboard() {
   const [email, setEmail] = useState("");
   const [meetingDay, setMeetingDay] = useState("");
 
+  const [clubsSignedUp, setClubsSignedUp] = useState([]);
+
   useEffect(() => {
     if (status == "unauthenticated") {
       return router.push("/");
     }
     if (session?.user?.name == "club") {
       return router.push("/");
+    }
+
+    if (!session?.user?.email) {
+      return;
     }
   }, [status]);
 

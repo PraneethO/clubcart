@@ -8,4 +8,4 @@ const formSchema = new mongoose.Schema({
 
 export default (mongoose.models.Form
   ? mongoose.models.Form
-  : mongoose.model("Club", formSchema)) as any;
+  : mongoose.model("Form", formSchema)) as any;

@@ -8,6 +8,8 @@ const clubSchema = new mongoose.Schema({
   school: { type: String, required: true },
   sponsorName: { type: String, required: true },
 
+  meetingDay: { type: String, default: "" },
+
   studentList: [{ type: String, default: [] }],
   paidStudentList: [{ type: String, default: [] }],
   fees: { type: Number, default: 0 },

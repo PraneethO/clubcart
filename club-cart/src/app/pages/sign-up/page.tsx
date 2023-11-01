@@ -127,7 +127,7 @@ export default function SignUp() {
               }}
               style={
                 studentForm
-                  ? { backgroundColor: "rgb(4, 78, 139)" }
+                  ? { backgroundColor: "rgb(4, 78, 139)"}
                   : { background: "transparent" }
               }
             >
@@ -144,7 +144,7 @@ export default function SignUp() {
                   : { background: "transparent" }
               }
             >
-              Administration
+              Advisor
             </button>
           </div>
           {studentForm ? (
@@ -204,21 +204,22 @@ export default function SignUp() {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  type="password"
                 ></input>
               </div>
               <div className={styles.inputContainer}>
-                <div className={styles.inputDesc}>
+                <div className={styles.inputDesc} style={{marginBottom: "0"}}>
                   School Code
-                  <span style={{ fontSize: "1.3rem", marginLeft: "15%" }}>
-                    <a href="http://localhost:3000/pages/school-codes">
+                  <span style={{ fontSize: "1.3rem", marginBottom: "0.25rem", marginLeft: "1rem"}}>
+                    <a href="http://localhost:3000/pages/school-codes" style={{color: "#044e8b"}}>
                       More Information About School Codes
                     </a>
                   </span>
                 </div>
                 <input
                   className={styles.inputField}
-                  style={{ width: "100%" }}
-                  placeholder="Enter Your school code"
+                  style={{ width: "100%", marginTop: "0.25rem"}}
+                  placeholder="Enter Your School Code"
                   value={school}
                   onChange={(e) => {
                     setSchool(e.target.value);
@@ -257,8 +258,8 @@ export default function SignUp() {
               <div className={styles.inputContainer}>
                 <div className={styles.inputDesc} style={{ marginTop: "0" }}>
                   School Code
-                  <span style={{ fontSize: "1.3rem", marginLeft: "15%" }}>
-                    <a href="http://localhost:3000/pages/school-codes">
+                  <span style={{ fontSize: "1.3rem", marginBottom: "0.25rem", marginLeft: "1rem"}}>
+                    <a href="http://localhost:3000/pages/school-codes" style={{color: "#044e8b"}}>
                       More Information About School Codes
                     </a>
                   </span>
@@ -295,6 +296,7 @@ export default function SignUp() {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  type="password"
                 ></input>
               </div>
               <div className={styles.inputContainer}>
@@ -302,7 +304,7 @@ export default function SignUp() {
                 <input
                   className={styles.inputField}
                   style={{ width: "100%" }}
-                  placeholder="Enter your sponsor name (shortened is fine)"
+                  placeholder="Enter Your Name"
                   value={sponsorName}
                   onChange={(e) => {
                     setSponsorName(e.target.value);

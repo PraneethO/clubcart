@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 import axios from "axios";
+import Link from "next/link";
 
 export default function SchoolCodes() {
   const [name, setName] = useState("");
@@ -35,44 +36,53 @@ export default function SchoolCodes() {
 
   return (
     <main className={styles.main}>
-      <nav className={styles.nav}>CLUBCART</nav>
+      <nav className={styles.nav}>
+        <Link href="/" style={{ textDecoration: "none", color: "#044e8b", transform: "translateY(-0.25rem)" }}>
+          <div style={{ marginTop: "0", marginBottom: "auto", }}>CLUBCART</div>
+        </Link>
+      </nav>
       <div className={styles.mainContainer}>
-        If you want to add a school, use this form, but make sure your school is
-        not mentioned below (There might be alternate names).
-        <div className={styles.threeWay}>
-          <div className={styles.inputContainer}>
-            <div className={styles.inputDesc}>School Name</div>
-            <input
-              className={styles.inputField}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+        <div className={styles.titleText}>Use this form to create a school code. If you do not see your school, please request a code.</div>
+        <div className={styles.bigBox}>
+          <div className={styles.threeWay}>
+            <div className={styles.inputContainer}>
+              <div className={styles.inputDesc}>School Name</div>
+              <input
+                className={styles.inputField}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter Your School's Name"
+              />
+            </div>
+            <div className={styles.inputContainer}>
+              <div className={styles.inputDesc}>Zip Code</div>
+              <input
+                className={styles.inputField}
+                type="number"
+                value={zip}
+                onChange={(e) => setZip(e.target.value)}
+                placeholder="Enter Your School's Zip Code"
+              />
+            </div>
+            <button className={styles.inputButton} type="submit" onClick={handleSubmit}>
+              Add School
+            </button>
           </div>
-          <div className={styles.inputContainer}>
-            <div className={styles.inputDesc}>Zip Code</div>
-            <input
-              className={styles.inputField}
-              type="number"
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-            />
-          </div>
-          <button type="submit" onClick={handleSubmit}>
-            Add School
-          </button>
         </div>
+        <div className={styles.titleText} style={{ marginTop: "5rem" }}>Existing schools and codes:</div>
         <div className={styles.schoolListContainer}>
           <div className={styles.schoolInfo}>
-            <div>School Name:</div>
-            <div>School Code:</div>
+            <div className={styles.label1}>School Name:</div>
+            <div className={styles.label1}>School Code:</div>
           </div>
           {schoolList.map((school, index) => (
             <div key={index} className={styles.schoolInfo}>
-              <div>{school.name}</div>
-              <div>{school.code}</div>
+              <div className={styles.label2}>{school.name}</div>
+              <div className={styles.label2}>{school.code}</div>
             </div>
           ))}
         </div>
+
       </div>
     </main>
   );

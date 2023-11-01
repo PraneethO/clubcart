@@ -20,7 +20,7 @@ export default function Payment() {
 
   return (
     <main className={styles.main}>
-            <div className={styles.nav}>
+      <div className={styles.nav}>
         <Link
           href="/pages/shop"
           style={{ textDecoration: "none", color: "#044e8b" }}
@@ -65,7 +65,7 @@ export default function Payment() {
         <Link
           href="/pages/user-profile"
           className={styles.link}
-          style={{ marginLeft: "1rem", marginRight: "1rem"}}
+          style={{ marginLeft: "1rem", marginRight: "1rem" }}
         >
           <button className={styles.navButton}>
             <img

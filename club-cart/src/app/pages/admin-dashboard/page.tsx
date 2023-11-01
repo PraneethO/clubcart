@@ -157,7 +157,7 @@ export default function AdminDashboard() {
               </Link>
               <div
                 className={styles.firstHalfDescription}
-                style={{ width: "100%", fontSize: "1.3rem" }}
+                style={{ width: "100%", fontSize: "1.3rem", marginLeft: "6px"}}
               >
                 Click on the text above to finish setting up your club,
                 including setting days of meet and other necessary information.
@@ -172,10 +172,10 @@ export default function AdminDashboard() {
               <Link href="/pages/form-manager">
                 <button className={styles.dashboardButton}>
                   Bank Information
-                  <span style={{ fontSize: "1rem", paddingLeft: "1vw" }}>
+                  {/* <span style={{ fontSize: "1rem", paddingLeft: "1vw" }}>
                     We're commited to privacy. Visit our privacy page for more
                     information.
-                  </span>
+                  </span> */}
                 </button>
               </Link>
               <div
@@ -187,7 +187,7 @@ export default function AdminDashboard() {
                     className={styles.splitInput}
                     placeholder="Credit Card Number"
                     type="number"
-                    style={{ width: "68%" }}
+                    style={{ width: "68%", marginLeft: "6px"}}
                   />
                   <input
                     className={styles.splitInput}
@@ -207,7 +207,7 @@ export default function AdminDashboard() {
                   className={styles.splitInput}
                   placeholder="Card Holder's Name"
                   type="text"
-                  style={{ width: "50%" }}
+                  style={{ width: "50%", marginLeft: "6px" }}
                 />
                 <input
                   className={styles.splitInput}
@@ -216,13 +216,13 @@ export default function AdminDashboard() {
                   style={{ width: "30%" }}
                 />
                 <button
-                  style={{ width: "10%", fontSize: "2rem", cursor: "pointer" }}
+                  className={styles.creditCardSubmit}
                   onClick={handleBankSubmit}
                 >
                   Submit
                 </button>
               </div>
-              <div style={{ fontSize: "1.3rem" }}>
+              <div style={{ fontSize: "1.3rem", marginLeft: "6px", marginTop: "1rem"}}>
                 Enter your visa card information above so that your dues go
                 through. This allows students to sign up and pay their dues to
                 your club.
@@ -368,17 +368,18 @@ export default function AdminDashboard() {
       </div>
       <div
         className={styles.bottomPart}
+        
         style={completedBank ? { transform: "translateY(0)" } : {}}
       >
         <div
-          style={{ display: "flex", flexDirection: "column", fontSize: "1rem" }}
+          style={{ display: "flex", flexDirection: "column", fontSize: "1rem", padding: "1rem" }}
         >
           <h1>All Students</h1>
           {studentList.map((student, key) => {
             return <div id={key.toString()}>{student + " "}</div>;
           })}
         </div>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", fontSize: "1rem", padding: "1rem" }}>
           <h1>Paid Students</h1>
           {paidStudentList.map((student, key) => {
             return <div id={key.toString()}>{student + " "}</div>;

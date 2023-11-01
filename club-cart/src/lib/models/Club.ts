@@ -15,6 +15,7 @@ const clubSchema = new mongoose.Schema({
   fees: { type: Number, default: 0 },
   description: { type: String, default: "" },
   forms: [{ type: String, default: [] }],
+  picture: { type: String },
 
   completedSetup: { type: Boolean, default: false },
   completedBank: { type: Boolean, default: false },

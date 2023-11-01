@@ -18,6 +18,7 @@ export default function AdminDashboard() {
   const [description, setDescription] = useState("");
   const [forms, setForms] = useState(0);
   const [formList, setFormList] = useState([]);
+  const [picture, setPicture] = useState("");
 
   useEffect(() => {
     if (status == "unauthenticated") {
@@ -40,6 +41,7 @@ export default function AdminDashboard() {
         setDescription(response.data.body.description);
         setForms(response.data.body.forms);
         setFormList(response.data.body.formList);
+        setPicture(response.data.body.picture);
       })
       .catch((err) => {
         alert(err);
@@ -55,6 +57,7 @@ export default function AdminDashboard() {
         description,
         forms,
         formList,
+        picture,
       })
       .then((response) => {
         alert("Changes made successfully!");
@@ -189,12 +192,16 @@ export default function AdminDashboard() {
 
                 <div className={styles.infoRow}>
                   <div className={styles.descriptionContainer}>
-                    <div className={styles.description}>Pictures</div>
+                    <div className={styles.description}>
+                      Profile Picture (Must be Web Link)
+                    </div>
                   </div>
                   <input
                     className={styles.tallInput}
-                    placeholder="Upload Images"
-                    type="file"
+                    placeholder="Upload Image Link"
+                    type="text"
+                    value={picture}
+                    onChange={(e) => setPicture(e.target.value)}
                   ></input>
                 </div>
 

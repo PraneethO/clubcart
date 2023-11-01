@@ -48,6 +48,17 @@ export default function AdminDashboard() {
       });
   }, [status, session]);
 
+  const handleBankSubmit = async () => {
+    axios
+      .post("http://localhost:3000/api/updateAdminBank", {
+        email: session?.user?.email,
+      })
+      .then((response) => {
+        alert("Details entered successfully!");
+        location.reload();
+      });
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.nav}>
@@ -204,6 +215,7 @@ export default function AdminDashboard() {
                 />
                 <button
                   style={{ width: "10%", fontSize: "2rem", cursor: "pointer" }}
+                  onClick={handleBankSubmit}
                 >
                   Submit
                 </button>
@@ -352,12 +364,23 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
-      <div className={styles.bottomPart}>
-        <div>
+      <div
+        className={styles.bottomPart}
+        style={completedBank ? { transform: "translateY(0)" } : {}}
+      >
+        <div
+          style={{ display: "flex", flexDirection: "column", fontSize: "1rem" }}
+        >
           <h1>All Students</h1>
+          {studentList.map((student, key) => {
+            return <div id={key.toString()}>{student + " "}</div>;
+          })}
         </div>
         <div>
           <h1>Paid Students</h1>
+          {paidStudentList.map((student, key) => {
+            return <div id={key.toString()}>{student + " "}</div>;
+          })}
         </div>
       </div>
     </main>

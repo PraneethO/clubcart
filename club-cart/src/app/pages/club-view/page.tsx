@@ -158,10 +158,14 @@ export default function Dashboard() {
         <div className={styles.clubContentContainer}>
           <div className={styles.clubName}>{name}</div>
           <div className={styles.cost}>{"$" + dues + ".00"}</div>
-          <div className={styles.clubDescriptionTitle}>Email</div>
-          <div className={styles.clubDescription}>{email}</div>
-          <div className={styles.clubDescriptionTitle}>Meeting Day</div>
-          <div className={styles.clubDescription}>{meetingDay}</div>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div className={styles.clubDescriptionTitle} style={{ border: "none", fontSize: "1rem", width: "fit-content" }}>Sponsor Email: </div>
+            <div className={styles.clubDescription} style={{ flex: "0", width: "fit-content", marginTop: "auto", marginBottom: "auto" }}>{email}</div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div className={styles.clubDescriptionTitle} style={{ border: "none", fontSize: "1rem", width: "fit-content" }}>Meeting Day(s): </div>
+            <div className={styles.clubDescription} style={{ flex: "0", width: "fit-content", marginTop: "auto", marginBottom: "auto" }}>{meetingDay}</div>
+          </div>
           <div className={styles.clubDescriptionTitle}>Description</div>
           <div className={styles.clubDescription}>{description}</div>
           <div className={styles.clubDescription}></div>
@@ -171,7 +175,7 @@ export default function Dashboard() {
               onClick={handleAddCart}
               style={{ cursor: "pointer" }}
             >
-              Register / Add to Cart
+              Add to Cart
             </div>
           </button>
         </div>

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function Cart() {
@@ -29,10 +29,26 @@ export default function Cart() {
         >
           <div className={styles.navLogo}>CLUBCART</div>
         </Link>
+        <button
+          onClick={() => {
+            signOut({ redirect: true, callbackUrl: "http://localhost:3000" });
+          }}
+          className={styles.link}
+          style={{
+            marginLeft: "auto",
+            height: "250%",
+            fontSize: "1.5rem",
+            backgroundColor: "red",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          Log Out
+        </button>
         <Link
           href="/pages/shop"
           className={styles.link}
-          style={{ marginLeft: "auto" }}
+          style={{ marginLeft: "1rem" }}
         >
           <button className={styles.navButton}>
             <img

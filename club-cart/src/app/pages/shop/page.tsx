@@ -220,7 +220,7 @@ export default function Dashboard() {
               {clubList.map((club: any, key) => {
                 return (
                   <Link
-                    href={`/pages/club-view/${club._id}`}
+                    href={`/pages/club-view/?id=${club._id}`}
                     className={styles.clubContainer}
                     key={key}
                   >
@@ -252,7 +252,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                     <button className={styles.clubExtra}>
-                      <div className={styles.addToCartText}>Add to Cart</div>
+                      <div className={styles.addToCartText}>More Info</div>
                     </button>
                   </Link>
                 );

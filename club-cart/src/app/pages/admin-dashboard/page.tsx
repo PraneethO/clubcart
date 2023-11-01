@@ -1,13 +1,22 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 
+import axios from "axios";
+
 export default function AdminDashboard() {
   const router = useRouter();
+
+  const [name, setName] = useState("");
+  const [completedSetup, setCompletedSetup] = useState(false);
+  const [completedBank, setCompletedBank] = useState(false);
+  const [studentList, setStudentList] = useState([]);
+  const [paidStudentList, setPaidStudentList] = useState([]);
+  const [fees, setFees] = useState(0);
 
   const { data: session, status } = useSession();
 
@@ -18,7 +27,26 @@ export default function AdminDashboard() {
     if (session?.user?.name == "student") {
       return router.push("/");
     }
-  }, [status]);
+
+    if (!session?.user?.email) {
+      return;
+    }
+    axios
+      .post("http://localhost:3000/api/getAdminDashboardInfo", {
+        email: session?.user?.email,
+      })
+      .then((response) => {
+        setName(response.data.body.name);
+        setCompletedBank(response.data.body.completedBank);
+        setCompletedSetup(response.data.body.completedSetup);
+        setStudentList(response.data.body.studentList);
+        setPaidStudentList(response.data.body.paidStudentList);
+        setFees(response.data.body.fees);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }, [status, session]);
 
   return (
     <main className={styles.main}>
@@ -65,7 +93,7 @@ export default function AdminDashboard() {
           className={styles.link}
           style={{ marginLeft: "1rem" }}
         >
-          <button className={styles.navButton}>
+          <button className={styles.navButton} style={{ width: "8vw" }}>
             <img
               src="/forms-icon.png"
               width={35}
@@ -76,7 +104,7 @@ export default function AdminDashboard() {
                 transform: "translateX(-2px)",
               }}
             />
-            forms
+            forms and setup
           </button>
         </Link>
         <Link
@@ -98,32 +126,118 @@ export default function AdminDashboard() {
 
       <div className={styles.dashContainer}>
         <div className={styles.dashLabelContainer}>
-          <div className={styles.greetingLabel}>Welcome, Name!</div>
+          <div className={styles.greetingLabel}>
+            Welcome, {name}! Below are your action items.
+          </div>
           <div className={styles.dashLabel}>Analytics</div>
         </div>
       </div>
 
       <div className={styles.dashContainerContent}>
         <div className={styles.left}>
+          {completedSetup ? (
+            <div></div>
+          ) : (
+            <div className={styles.headerLabels}>
+              <Link href="/pages/form-manager">
+                <button className={styles.dashboardButton}>Club Setup</button>
+              </Link>
+              <div
+                className={styles.firstHalfDescription}
+                style={{ width: "100%", fontSize: "1.3rem" }}
+              >
+                Click on the text above to finish setting up your club,
+                including setting days of meet and other necessary information.
+              </div>
+            </div>
+          )}
+
+          {completedBank ? (
+            <div></div>
+          ) : (
+            <div className={styles.headerLabels}>
+              <Link href="/pages/form-manager">
+                <button className={styles.dashboardButton}>
+                  Bank Information
+                  <span style={{ fontSize: "1rem", paddingLeft: "1vw" }}>
+                    We're commited to privacy. Visit our privacy page for more
+                    information.
+                  </span>
+                </button>
+              </Link>
+              <div
+                className={styles.firstHalfDescription}
+                style={{ width: "100%", fontSize: "1.3rem" }}
+              >
+                <div className={styles.splitInputContainer}>
+                  <input
+                    className={styles.splitInput}
+                    placeholder="Credit Card Number"
+                    type="number"
+                    style={{ width: "68%" }}
+                  />
+                  <input
+                    className={styles.splitInput}
+                    placeholder="Security Code"
+                    type="number"
+                    min={100}
+                    max={999}
+                    style={{ width: "30%" }}
+                  />
+                </div>
+              </div>
+              <div
+                className={styles.splitInputContainer}
+                style={{ paddingTop: "2vh" }}
+              >
+                <input
+                  className={styles.splitInput}
+                  placeholder="Card Holder's Name"
+                  type="text"
+                  style={{ width: "50%" }}
+                />
+                <input
+                  className={styles.splitInput}
+                  placeholder="Expiry Date (MM/YY)"
+                  type="text"
+                  style={{ width: "30%" }}
+                />
+                <button
+                  style={{ width: "10%", fontSize: "2rem", cursor: "pointer" }}
+                >
+                  Submit
+                </button>
+              </div>
+              <div style={{ fontSize: "1.3rem" }}>
+                Enter your visa card information above so that your dues go
+                through. This allows students to sign up and pay their dues to
+                your club.
+              </div>
+            </div>
+          )}
+        </div>
+        {/* <div className={styles.left}>
           <div className={styles.headerLabels}>
             <Link href="/pages/form-manager">
-              <button className={styles.dashboardButton}>Create Club</button>
+              <button className={styles.dashboardButton}>Club Setup</button>
             </Link>
             <div className={styles.infoContainer}>
               <div className={styles.infoRow}>
                 <div className={styles.descriptionContainer}>
-                  <div className={styles.firstHalfDescription}>Club Name</div>
+                  <div className={styles.firstHalfDescription}>
+                    Weekday of Meet
+                  </div>
                   <div className={styles.lastHalfDescription}>Dues</div>
                 </div>
                 <div className={styles.splitInputContainer}>
                   <input
                     className={styles.splitInput}
-                    placeholder="Enter the Club's Name"
+                    placeholder="Enter Only the Weekday When the Club Meets Up"
                     // make it numbers only
                   />
                   <input
                     className={styles.splitInput}
-                    placeholder="Enter the Number of External Forms You Would Like Include"
+                    placeholder="Enter the Amount of Dues Required to Pay"
                     type="number"
                     min={0}
                   />
@@ -146,7 +260,7 @@ export default function AdminDashboard() {
                 style={{ textDecoration: "none" }}
               >
                 <button className={styles.continueButton}>
-                  Continue to Create Your Club
+                  Add or Modify Setup
                 </button>
               </Link>
             </div>
@@ -215,29 +329,35 @@ export default function AdminDashboard() {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.right}>
           <div className={styles.analyticsContainer}>
             <div className={styles.analyticsContentContainer}>
               <div className={styles.analyticsText}>Number of Students</div>
-              <div className={styles.analytic}>57</div>
+              <div className={styles.analytic}>{studentList.length}</div>
             </div>
 
             <div className={styles.analyticsContentContainer}>
               <div className={styles.analyticsText}>Dues Collected</div>
-              <div className={styles.analytic}>$2,095</div>
+              <div className={styles.analytic}>
+                ${paidStudentList.length * fees}
+              </div>
             </div>
             <div className={styles.orderBorder}></div>
 
             <Link href="/analytics" style={{ color: "#044e8b" }}>
-              <div className={styles.analyticsContentContainer}>
-                <div className={styles.analyticsText}>
-                  Download Paid Student List
-                </div>
-              </div>
+              <div className={styles.analyticsContentContainer}></div>
             </Link>
           </div>
+        </div>
+      </div>
+      <div className={styles.bottomPart}>
+        <div>
+          <h1>All Students</h1>
+        </div>
+        <div>
+          <h1>Paid Students</h1>
         </div>
       </div>
     </main>

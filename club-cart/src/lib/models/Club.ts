@@ -6,13 +6,18 @@ const clubSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   school: { type: String, required: true },
-  list: [{ type: String, required: true }],
-  fees: [{ type: String, required: true }],
   sponsorName: { type: String, required: true },
+
+  studentList: [{ type: String, default: [] }],
+  paidStudentList: [{ type: String, default: [] }],
+  fees: { type: Number, default: 0 },
+  description: { type: String, default: "" },
+  forms: [{ type: String, default: [] }],
+
+  completedSetup: { type: Boolean, default: false },
+  completedBank: { type: Boolean, default: false },
 });
 
 export default (mongoose.models.Club
   ? mongoose.models.Club
   : mongoose.model("Club", clubSchema)) as any;
-
-// module.exports = mongoose.models.Club || mongoose.model("Club", clubSchema);
